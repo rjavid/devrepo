@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+ @using (Html.BeginForm())
+ {
+  
+ <h2>Category</h2>
+<div id="products-container">
+
+
+
+@for (int i = 0; i < 4; i++)
+			{
+
+
+             
+    <div class="uiv2-shopping-lis-sku-cards">
+     @for (int j = 0; j < 4; j++)
+     {
+<ul class="uiv2-our-recommendations-list-box">
+ 
+                 
+<li class="" id="product_1_1_40048683" name="widget_40048683">
+                
+                <div class="uiv2-list-box-img-block">
+                <a href="http://bigbasket.com/pd/40048683/neo-paste-garlic-200-gm/" title="Neo Paste - Garlic 200 gm">
+                    
+               <img src="../../productImage/40048683_1-neo-paste-garlic.jpg" />
+                </a>
+                </div><!------------- product description text starts----------------><div class="uiv2-list-box-img-title"><span class="uiv2-title-tool-tip"></span><span class="uiv2-title-tool-tip"><a href="http://bigbasket.com/pd/40048683/neo-paste-garlic-200-gm/"><span class="uiv2-brand-title">NEO</span>
+                        Paste - Garlic @i@j
+                    </a><span class="uiv2-tool-tip-hover ">Neo Paste - Garlic 200 gm </span></span></div><div class="uiv2-field-wrap mt10">
+                    200 gm
+                </div><div class="uiv2-list-box-drop-rate-block"><div class="ListBox_Rate_count"><div class="uiv2-rate-count-avial"><span class="WebRupee">Rs.</span> 40</div></div><div class="uiv2-list-rate-block">
+                <div class="uiv2-add-to-basket">
+                <!------ version1 Start------------>
+                <input type="hidden" id="express_tab_40048683" value="False" />
+                    <div class="uiv2-rate-count-text delivery-slot-label">
+                        <div class="uiv2-rate-count-text delivery-slot-label">
+                            <div class="prod_autoSearch_standard"><a class="prod_autoSearch_standard" title="Standard Delivery: Tomorrow Morning"></a></div>
+                            <label class="delivery-slot-label ">
+                        Standard Delivery: Tomorrow Morning
+                    </label></div></div>
+                    <input type="hidden" id="cartitem_mode_40048683" value="normal" />
+                    <div class="clr"></div><div class="uiv2-rate-count-btn">
+                    <span class="uiv2-qty-label">Qty</span><input value="1" type="text" id="p40048683_qty" maxlength="2" /></div>
+                    <a class="uiv2-add-button a2c" href="javascript:void(0)" id="p_40048683_1">
+                            ADD<span class="icon icon-basket-gray"></span></a></div></div></div>
+                            <input type="hidden" id="prod-40048683-desc" value="Neo Paste - Garlic 200 gm " />
+                            <input type="hidden" id="40048683_availability" value="1" />
+</li>
+            <div id="store_popup_40048683" class="uiv2-popup" style="left: 94.5%;border: rgb(204, 204, 204);padding: 10px;width: 230px;height: auto;">
+           </div>
+            
+            @if (j == 3)
+            {
+                continue;
+                    
+            }
+       <li class="uiv2-separator"></li>
+          
+                
+</ul>
+     }
+</div>
+            }
+
+
+
+</div>
+
+  }
+
+
+

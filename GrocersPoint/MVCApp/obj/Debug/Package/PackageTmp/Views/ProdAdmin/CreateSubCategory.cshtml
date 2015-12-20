@@ -1,0 +1,55 @@
+﻿@model BLL.Category
+@{
+    ViewBag.Title = "SubCategory";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+}
+@using (Html.BeginForm())
+ {
+   
+     
+<table width="100%">
+<tr>
+<td style="text-align:center"> <b>Sub Category</b></td>
+
+</tr>
+</table>
+     
+<table>
+
+      <tr> 
+            <td>
+           <label id="lblCategoryPopUp">Category</label>
+          </td>
+
+            <td>
+            @Html.DropDownList("ddlSubCategory", (IEnumerable<SelectListItem>)ViewBag.SubCategory, "Select Category")
+            
+          </td>
+       
+  </tr>
+
+      <tr>
+              <td>
+                   <label id="lblSubCategory" class="lbls">Sub Category</label>
+               </td>
+                    <td>
+                      <input type="text" id="txtSubCategory" name="txtSubCategory" class="txtbox" />
+                </td>
+
+
+     </tr>
+
+      <tr>
+                                <td>
+                                   
+                                </td>
+                                <td>
+                                  <input type="submit" style= "width:60%; text-align:center;" id="btnSumbit" value="Add Category" />
+                                </td>
+
+
+                            </tr>
+
+</table>
+    
+ }

@@ -1,0 +1,28 @@
+﻿@model BLL.Category
+
+@{
+    ViewBag.Title = "DeleteCategory";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+}
+
+<h2>DeleteCategory</h2>
+
+@using (Html.BeginForm()) {
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Category</legend>
+     @Html.HiddenFor(model => model.Cat_Id)
+  
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cat_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cat_Name)
+    </div>
+</fieldset>
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Category")
+    </p>
+}

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<BLL.Category>
+
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+}
+<p style="text-align:center">
+<b>Category</b>
+</p>
+
+<p style="text-align:right">
+    @Html.ActionLink("Create New", "CreateCategory")
+</p>
+<table border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat_Id)
+              
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat_Name)
+        </th>
+        <th>Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cat_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cat_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditCategory", new {  id=item.Cat_Id }) |
+            @Html.ActionLink("Delete", "DeleteCategory", new { id = item.Cat_Id })
+        </td>
+    </tr>
+}
+
+</table>

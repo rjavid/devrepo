@@ -1,0 +1,34 @@
+﻿@model BLL.Category
+
+@{
+    ViewBag.Title = "EditCategory";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+}
+
+<h2>EditCategory</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Category</legend>
+             @Html.HiddenFor(model => model.Cat_Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cat_Name,"Category Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cat_Name)
+            @Html.ValidationMessageFor(model => model.Cat_Name)
+        </div>
+<br />
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Category")
+</div>
+

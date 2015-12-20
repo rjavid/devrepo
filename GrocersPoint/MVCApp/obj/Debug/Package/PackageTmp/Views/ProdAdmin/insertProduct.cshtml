@@ -1,0 +1,70 @@
+﻿@model BLL.Product
+
+@{
+    ViewBag.Title = "insertProduct";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+    
+}
+
+<h2>Insert Product</h2>
+
+@using (Html.BeginForm("FileUpload", "FileUpload",
+                    FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+
+
+        <fieldset>
+        <legend>Product</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prod_Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prod_Id)
+            @Html.ValidationMessageFor(model => model.Prod_Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prod_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prod_Name)
+            @Html.ValidationMessageFor(model => model.Prod_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prod_Img)
+        </div>
+        <div>
+           @* @Html.EditorFor(model => model.Prod_Img)*@
+           <input type="file" id="fileToUpload" name="file" />
+            @*@Html.ValidationMessageFor(model => model.Prod_Img)*@
+            <span class="field-validation-error" id="spanfile"></span>
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sub_Cat_Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sub_Cat_Id)
+            @Html.ValidationMessageFor(model => model.Sub_Cat_Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Brand_Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Brand_Id)
+            @Html.ValidationMessageFor(model => model.Brand_Id)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

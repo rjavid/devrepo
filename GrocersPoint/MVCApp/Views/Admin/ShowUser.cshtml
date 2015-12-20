@@ -1,0 +1,148 @@
+﻿@{ ViewBag.Title = "Index"; Layout = "../Shared/_Layout.cshtml"; }
+<script src="~/Scripts/jquery-1.11.3.min.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxcore.js"  type="text/javascript"></script>
+<script src="~/Scripts/demos.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxdata.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxtooltip.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxbuttons.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxscrollbar.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxlistbox.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxdropdownlist.js"  type="text/javascript"></script>
+<script src="~/Scripts/bootstrap.min.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxgrid.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxgrid.selection.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxgrid.sort.js"  type="text/javascript"></script>
+<script src="~/Scripts/popup_plugin.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxgrid.pager.js"  type="text/javascript"></script>
+<script src="~/Scripts/jqxgrid.grouping.js"  type="text/javascript"></script>
+<script src="../../jqwidgets/jqxlistmenu.js" type="text/javascript"></script>
+<script src="../../Scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../Scripts/bootstrap.min.js" type="text/javascript"></script>
+<script src="../../jqwidgets/jqxmenu.js" type="text/javascript"></script>
+<script src="../../jqwidgets/jqxgrid.filter.js" type="text/javascript"></script>    
+<link href="../../jqwidgets/styles/jqx.base.css" rel="stylesheet" type="text/css" />
+<link href="../../Content/Site.css" rel="stylesheet" type="text/css" />
+<link href="../../Content/popup.css" rel="stylesheet" type="text/css" />
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+
+                //                $("#divBlack").hide();
+                //                $("#divPopup").hide();
+
+
+
+
+
+
+                var DataRow = "";
+
+
+                $("#jqxgrid").bind('rowselect', function (event) {
+                    //                    // debugger;
+                    //                    $("#divBlack").show();
+                    //                    $("#divPopup").show();
+                    row = event.args.rowindex
+
+
+
+                    edit_row_index = row;
+                    navigation_row_index = edit_row_index;
+
+                    datarow = $("#jqxgrid").jqxGrid('getrowdata', row);
+
+
+                    var GridRows = $('#jqxgrid').jqxGrid('getrows');
+                    GridRowCount = GridRows.length;
+                    var selected_row_no = row + 1;
+                    $("#txtUserid").val(datarow.User_ID);
+
+                    //now assign the data to controls 
+                    // $("#myModalLabel").text('Editing Record No.' + selected_row_no + ' of ' + GridRowCount);
+
+
+
+                    //$("#launch_modal").click();
+
+
+
+
+                    //deselectGridRow();
+                }); //end of $("#jqxgrid").bind row select event
+
+
+
+
+                function deselectGridRow() {
+
+                    var index = $('#jqxgrid').jqxGrid('getrowboundindex', row);
+
+                    $('#jqxgrid').jqxGrid('unselectrow', index);
+
+                }
+
+
+
+
+                prepare_HcrGrid();
+                function prepare_HcrGrid() {
+                    debugger;
+                    var source =
+                             {
+                                 datatype: "json",
+                                 datafields: [
+                                     { name: 'ud_id', type: 'string' },
+                                     { name: 'User_ID', type: 'string' },
+                                     { name: 'User_Designation', type: 'string' },
+                                     { name: 'User_Name', type: 'string' },
+                                     { name: 'User_Email', type: 'string' }
+                                 ],
+
+                                 url: '/Admin/GetShowUser',
+                                 data: {}
+                             };
+                    var dataAdapter = new $.jqx.dataAdapter(source);
+                    $("#jqxgrid").jqxGrid(
+                {
+                    width: "100%",
+                    autoheight: true,
+                    source: dataAdapter,
+                    showfilterrow: true,
+                    filterable: true,
+                    pageable: true,
+                    enabletooltips: true,
+                    sortable: true,
+                    theme: 'customgrid',
+                    selectionmode: 'singlerow',
+                    columns: [
+                            { text: 'UD ID', align: 'center', cellsalign: 'center', datafield: 'ud_id', width: "50%", hidden: true },
+                            { text: 'User ID', align: 'center', cellsalign: 'center', datafield: 'User_ID', width: "20%", hidden: false },
+                            { text: 'Name', align: 'center', cellsalign: 'center', datafield: 'User_Name', width: "20%", hidden: false },
+                            { text: 'Email', align: 'center', datafield: 'User_Email', width: "30%", hidden: false },
+                            { text: 'Designation', align: 'center', cellsalign: 'center', datafield: 'User_Designation', width: "30%", hidden: false }
+
+
+                    ]
+
+
+
+                });
+
+                }
+
+
+
+                //    $('#jqxgrid').popup();
+
+            });
+            
+        
+ </script>
+  @using (Html.BeginForm())
+  { 
+
+  
+      <div id="jqxgrid"></div>
+      
+  }

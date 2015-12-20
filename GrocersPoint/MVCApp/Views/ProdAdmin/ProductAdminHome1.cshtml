@@ -1,0 +1,609 @@
+﻿@{
+    ViewBag.Title = "ChangePassword";
+    Layout = "../Shared/_ProdAdminLayout.cshtml.cshtml";
+}
+
+<h2>Product Admin</h2>
+
+@using (Html.BeginForm())
+{
+    
+<script src="~/Scripts/jquery-1.11.3.min.js"></script>
+<script src="~/Scripts/jqxcore.js"></script>
+<script src="~/Scripts/demos.js"></script>
+<script src="~/Scripts/jqxdata.js"></script>
+<script src="~/Scripts/jqxtooltip.js"></script>
+<script src="~/Scripts/jqxbuttons.js"></script>
+<script src="~/Scripts/jqxscrollbar.js"></script>
+<script src="~/Scripts/jqxlistbox.js"></script>
+<script src="~/Scripts/jqxdropdownlist.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link href="../../Content/Admin.css" rel="stylesheet" type="text/css" />   
+<link rel="stylesheet" type="text/css" href="../../jqwidgets/styles/jqx.base.css" />
+    
+    <script type="text/javascript">
+
+
+
+        $(document).ready(function () {
+
+
+            // global variables declared here
+            var category_id = 0;
+            var BrandID = 0;
+            var SubCategoryId = 0;
+
+
+
+
+            // button click events start here
+            $("#BtnInsertProduct").click(function () {
+                generate_ddlSubcategory();
+                generate_ddlBrand();
+
+                $("#ddlBrand").css('background-color', 'grey');
+                $("#ddlBrand").jqxDropDownList({ disabled: true });
+
+                $('#file').prop('disabled', true);
+                $("#file").css('background-color', 'grey');
+
+
+                $('#txtProductName').prop('disabled', true);
+                $("#txtProductName").css('background-color', 'grey');
+
+                $('#popupInsertProduct').prop('disabled', true);
+                $("#popupInsertProduct").css('background-color', 'grey');
+
+
+                $("#txtProductName").val('');
+
+            });
+
+
+
+            $("#popupInsertSubCat").click(function () {
+
+                var subcat = $("#txtSubCategory").val();
+                if (subcat == "") {
+                    alert('Please Enter Sub Category');
+                }
+                else {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Home/EnterSubCat',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: 'json',
+                        data: { catID: category_id, subCategoryName: subcat },
+                        success: function (data) {
+
+                            $.each(data, function (index, element) {
+
+                                if (element.SubCatFlag == '1') {
+
+                                    alert('Sub Category Inserted Successfully');
+                                    $("#btnclose").click();
+
+                                }
+                                else {
+                                    alert("Sub Category  Already Present!");
+                                }
+
+                            });
+
+                        },
+                        async: false,
+                        error: function (xhr, textStatus, error) {
+                            if (xhr.status === 401) {
+                                alert("Session Timeout!");
+                                window.location.href = "../Home/Home";
+                                return;
+                            }
+                        }
+                    }); //end of ajax
+                }
+
+
+            }); //end of insert sub category
+
+
+
+
+
+            // to insert sub category
+            $("#BtnInsertSubCategory").click(function () {
+                $('#txtSubCategory').val('')
+                $('#txtSubCategory').prop('disabled', true);
+                $("#txtSubCategory").css('background-color', 'grey');
+                $("#popupInsertSubCat").css('background-color', 'grey');
+                $('#popupInsertSubCat').prop('disabled', true);
+
+
+            }); //end of insert sub category
+
+            // to insert brand
+            $("#BtnInsertBrand").click(function () {
+                var brandName = $("#txtBrand").val();
+                if (brandName == "") {
+
+                    alert('Brand Cant be Left Blank');
+
+                }
+                else {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Home/EnterBrand',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: 'json',
+                        data: { Brand: brandName },
+                        success: function (data) {
+
+                            $.each(data, function (index, element) {
+
+                                if (element.BrandFlag == '1') {
+                                    $("#txtBrand").val('');
+                                    alert('Brand Inserted Successfully');
+                                }
+                                else {
+                                    alert("Brand Already Present!");
+                                }
+
+                            });
+
+                        },
+                        async: false,
+                        error: function (xhr, textStatus, error) {
+                            if (xhr.status === 401) {
+                                alert("Session Temeout!");
+                                window.location.href = "../Home/Home";
+                                return;
+                            }
+                        }
+                    }); //end of ajax
+                }
+
+
+            }); //end of insert brand
+
+
+
+
+            // to insert category
+            $("#BtnInsertCategory").click(function () {
+                var categoryName = $("#txtCategory").val();
+                if (categoryName == "") {
+
+                    alert('Category Cant be Left Blank');
+
+                }
+                else {
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Home/EnterCategory',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: 'json',
+                        data: { categoryName: categoryName },
+                        success: function (data) {
+
+                            $.each(data, function (index, element) {
+
+                                if (element.CatFlag == '1') {
+                                    $("#txtCategory").val('');
+                                    alert('Category Inserted Successfully');
+
+                                }
+                                else {
+                                    alert("Category Already Present!");
+                                }
+
+                            });
+
+                        },
+                        async: false,
+                        error: function (xhr, textStatus, error) {
+                            if (xhr.status === 401) {
+                                alert("Session Timeout!");
+                                window.location.href = "../Home/Home";
+                                return;
+                            }
+                        }
+                    }); //end of ajax
+
+
+
+                }
+
+
+            }); //end of insert category
+
+
+            $("#BtnInsertSubCategory").click(function () {
+                generate_ddlCategory();
+
+            });
+
+
+            $("#popupInsertProduct").click(function () {
+                var image = $("#file").val();
+                var product = $("#txtProductName").val();
+                if (image == "" || product == "") {
+                    alert("Please Fill All Fields");
+                }
+                else {
+
+                    $("#btnImageUpload").click();
+                    $.ajax({
+                        type: 'GET',
+                        url: '/Home/EnterProduct',
+                        contentType: "application/json; charset=utf-8",
+                        dataType: 'json',
+                        data: { image: image, product: product, SubCategoryId: SubCategoryId, BrandID: BrandID },
+                        success: function (data) {
+
+                            $.each(data, function (index, element) {
+
+                                if (element.ProductFlag == '1') {
+                                    //$("#txtCategory").val('');
+                                    alert('Product Inserted Successfully');
+
+                                }
+                                //else {
+                                //    alert("Category Already Present!");
+                                //}
+
+                            });
+
+                        },
+                        async: false,
+                        error: function (xhr, textStatus, error) {
+                            if (xhr.status === 401) {
+                                alert("Session Timeout!");
+                                window.location.href = "../Home/Home";
+                                return;
+                            }
+                        }
+                    }); //end of ajax
+
+
+
+
+
+                }
+            });
+
+
+
+            // button click events end here
+
+
+
+
+
+
+            //functions start here
+            function generate_ddlBrand() {
+                var popup_dropdown_source_SubCategory =
+                                   {
+                                       datatype: "json",
+                                       datafields: [
+                                                      { name: 'Brand_Id', type: 'string' },
+                                                       { name: 'Brand_Name', type: 'string' }
+
+
+                                       ],
+                                       url: '/Home/GetBrand',
+                                       //async: false,
+                                       data: {}
+                                   };
+                var dataAdapter_popup_dropdown_subcategory = new $.jqx.dataAdapter(popup_dropdown_source_SubCategory);
+
+                $("#ddlBrand").jqxDropDownList({ source: dataAdapter_popup_dropdown_subcategory, animationType: 'fade', dropDownHorizontalAlignment: 'left', displayMember: "Brand_Name", valueMember: "Brand_Id", dropDownWidth: 247, width: 237, height: 25 });
+
+
+            } //generate category dropdown ends here
+
+
+
+            function generate_ddlSubcategory() {
+                var popup_dropdown_source_SubCategory =
+                                   {
+                                       datatype: "json",
+                                       datafields: [
+                                                      { name: 'Sub_Cat_Id', type: 'string' },
+                                                       { name: 'Sub_Cat_Name', type: 'string' }
+
+
+                                       ],
+                                       url: '/Home/GetSubCategory',
+                                       //async: false,
+                                       data: {}
+                                   };
+                var dataAdapter_popup_dropdown_subcategory = new $.jqx.dataAdapter(popup_dropdown_source_SubCategory);
+
+                $("#ddlSubCategory").jqxDropDownList({ source: dataAdapter_popup_dropdown_subcategory, animationType: 'fade', dropDownHorizontalAlignment: 'left', displayMember: "Sub_Cat_Name", valueMember: "Sub_Cat_Id", dropDownWidth: 247, width: 237, height: 25 });
+
+
+            } //generate category dropdown ends here
+
+
+
+            //generate category dropdown
+            function generate_ddlCategory() {
+                var popup_dropdown_source_Category =
+                                   {
+                                       datatype: "json",
+                                       datafields: [
+                                                      { name: 'Cat_Id', type: 'string' },
+                                                       { name: 'Cat_Name', type: 'string' }
+
+
+                                       ],
+                                       url: '/Home/GetCategory',
+                                       //async: false,
+                                       data: {}
+                                   };
+                var dataAdapter_popup_dropdown_category = new $.jqx.dataAdapter(popup_dropdown_source_Category);
+
+                $("#ddlCategory").jqxDropDownList({ source: dataAdapter_popup_dropdown_category, animationType: 'fade', dropDownHorizontalAlignment: 'left', displayMember: "Cat_Name", valueMember: "Cat_Id", dropDownWidth: 247, width: 237, height: 25 });
+
+
+            } //generate category dropdown ends here
+
+
+            //functions end here
+
+
+
+            //bind events start here
+            $('#ddlBrand').bind('select', function (event) {
+
+
+                $('#file').prop('disabled', false);
+                $("#file").css('background-color', 'white');
+                $('#txtProductName').prop('disabled', false);
+                $("#txtProductName").css('background-color', 'white');
+
+                $('#popupInsertProduct').prop('disabled', false);
+                $("#popupInsertProduct").css('background-color', 'blue');
+
+
+                var args = event.args;
+                var item = $('#ddlBrand').jqxDropDownList('getItem', args.index);
+                if (item != null) {
+
+                    BrandID = item.value;
+
+                    //grade_name = item.label;
+
+
+                }
+            });
+
+
+
+
+
+
+            $('#ddlSubCategory').bind('select', function (event) {
+
+                $("#ddlBrand").jqxDropDownList({ disabled: false });
+
+                $("#ddlBrand").css('background-color', 'white');
+
+
+                var args = event.args;
+                var item = $('#ddlSubCategory').jqxDropDownList('getItem', args.index);
+                if (item != null) {
+
+                    SubCategoryId = item.value;
+
+                    //grade_name = item.label;
+
+
+                }
+            }); // end of ddlcategory select event
+
+
+
+
+
+
+
+
+
+            $('#ddlCategory').bind('select', function (event) {
+
+
+                $('#txtSubCategory').prop('disabled', false);
+                $("#txtSubCategory").css('background-color', 'white');
+                $("#popupInsertSubCat").css('background-color', 'blue');
+                $('#popupInsertSubCat').prop('disabled', false);
+
+
+                var args = event.args;
+                var item = $('#ddlCategory').jqxDropDownList('getItem', args.index);
+                if (item != null) {
+
+                    category_id = item.value;
+
+                    //grade_name = item.label;
+
+
+                }
+            }); // end of ddlcategory select event
+
+
+
+
+
+
+            //bind events end here
+
+
+
+
+
+
+
+        }); //end of doc Ready
+
+
+    </script>
+<div id="MainDiv">
+
+
+
+
+
+    <div id="rightBody">
+        <table id="tblCategory">
+
+            <tr>
+                <td>
+                    <label id="lblCategory" class="lbls">Enter Category</label>
+                </td>
+                <td>
+                    <input type="text" id="txtCategory" class="txtbox" />
+                </td>
+                <td>
+                    <input type="button" id="BtnInsertCategory" value="Enter Category" class="btns" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label id="lblBrand" class="lbls">Enter Brand</label>
+                </td>
+                <td>
+                    <input type="text" id="txtBrand" class="txtbox" />
+                </td>
+                <td>
+                    <input type="button" id="BtnInsertBrand" value="Enter Brand" class="btns" />
+                </td>
+            </tr>
+
+        </table>
+        <div id="divSubmit">
+
+            <input type="button" id="BtnInsertSubCategory" value="Enter Sub Category" class="btns" data-toggle="modal" data-target="#DivSubCategory" />
+            <input type="button" id="BtnInsertProduct" value="Enter Product" class="btns" data-toggle="modal" data-target="#DivProduct" />
+
+        </div>
+
+    </div>
+
+
+
+
+
+    @*Bootstrap For sub category *@
+    @*bootstrap modal*@
+    <div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" id="DivSubCategory" style="width:720px;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <table id="tblSubCategory">
+                            <tr>
+                                <td>
+                                    <label id="lblCategoryPopUp" class="lbls">Category</label>
+                                </td>
+                                <td>
+                                    <div id="ddlCategory"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label id="lblSubCategory" class="lbls">Sub Category</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="txtSubCategory" class="txtbox" />
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary" id="popupInsertSubCat">Enter Sub Category</button>
+                    <button type="button" class="btn btn-primary" id="btnclose" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    @*Bootstrap For sub category *@
+    @*bootstrap modal*@
+    <div class="modal fade" role="dialog" aria-labelledby="gridSystemModalLabel" id="DivProduct" style="width:720px;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+
+                </div>
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <table id="tblSubCategory">
+                            <tr>
+                                <td>
+                                    <label id="lblSubcategorytPopUp" class="lbls"> Sub Category</label>
+                                </td>
+                                <td>
+                                    <div id="ddlSubCategory"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label id="lblBrand" class="lbls">Brand</label>
+                                </td>
+                                <td>
+                                    <div id="ddlBrand"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label id="lblImage" class="lbls">Upload Image</label>
+                                </td>
+                                <td>
+                                    @using (Html.BeginForm("FileUpload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                                    {
+                                        <label for="file" style="visibility:hidden;">Upload Image:</label>
+                                        <input type="file" name="file" id="file" style="width: 100%;" />
+                                        <input type="submit" value="Upload" class="submit" style="visibility:hidden;" id="btnImageUpload" />
+                                    }
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label id="lblProductName" class="lbls">Product Name</label>
+                                </td>
+                                <td>
+                                    <input type="text" id="txtProductName" class="txtbox" />
+                                </td>
+                            </tr>
+                        </table>
+
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+
+                    <button type="button" class="btn btn-primary" id="popupInsertProduct">Insert Product</button>
+                    <button type="button" class="btn btn-primary" id="btncloseProduct" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+</div>
+
+
+
+}

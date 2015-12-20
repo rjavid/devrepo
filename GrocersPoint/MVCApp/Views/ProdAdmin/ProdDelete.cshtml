@@ -1,0 +1,98 @@
+﻿@model BLL.ProductDetails
+
+@{
+    ViewBag.Title = "ProdDelete";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+}
+
+<h2>ProdDelete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>ProductDetails</legend>
+    @Html.HiddenFor(model => model.Prod_Id);
+    <table border="1" width="60%">
+    @*<tr>
+    <td>
+    
+         @Html.DisplayNameFor(model => model.Prod_Id)
+    
+    </td>
+    <td>
+   
+        @Html.DisplayFor(model => model.Prod_Id)
+    
+    </td>
+    </tr>*@
+    <tr>
+    <td>
+         @Html.DisplayNameFor(model => model.Prod_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Prod_Name)
+    </td>
+    </tr>
+
+     <tr>
+    <td>
+
+         @Html.DisplayNameFor(model => model.Prod_Img)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Prod_Img)
+    </td>
+    </tr>
+
+     <tr>
+    <td>
+   
+         @Html.DisplayNameFor(model => model.Sub_Cat_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Sub_Cat_Name)
+   </td>
+   </tr>
+    <tr>
+    <td>
+         @Html.DisplayNameFor(model => model.Brand_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Brand_Name)
+   </td>
+   </tr>
+
+    <tr>
+    <td>
+         @Html.DisplayNameFor(model => model.Price)
+   
+   </td>
+   <td>
+        @Html.DisplayFor(model => model.Price)
+   </td>
+</tr>
+
+ <tr>
+    <td>
+         @Html.DisplayNameFor(model => model.Offer_Price)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Offer_Price)
+  </td>
+</tr>
+
+ <tr>
+    <td>
+         @Html.DisplayNameFor(model => model.Purchase_Price)
+    </td>
+    <td>
+        @Html.DisplayFor(model => model.Purchase_Price)
+    </td>
+ </tr>
+    </table>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

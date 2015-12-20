@@ -1,0 +1,750 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-EmulateIE8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="keywords" content="online grocery,online grocery delhi,online grocery bangalore, online grocery shopping, online grocery store,online supermarket,grocery chennai,grocery pune,, online grocery shopping india, buy groceries online,online grocery bangalore online vegetable store, food shopping online,Online Grocery mysore">
+    <meta name="description" content="Online grocery store of Bangalore,Mysore Mumbai,Delhi,Hyderabad,Chennai and Pune. Online Supermarket includes online vegetable store, food shopping online and groceries online. Online Grocery Shopping made easy. Buy groceries online and all your food, household &amp; personal care needs at our store at the best prices and get free home delivery.">
+    <title>GrocersPoint - Online Grocery Store and Supermarket India.</title>
+    <link href="../../css/css.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/css_002.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/css_003.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/css_004.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/css_005.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/jquery-ui-1.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/uiv2_main.css" rel="stylesheet" type="text/css" />
+    <link href="../../css/jquery-ui.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="../../css/uiv2_main.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery-ui.js" type="text/javascript"></script>
+    <script src="../../js/jquery.js" type="text/javascript"></script>
+    <script src="../../js/uiv2_main.js" type="text/javascript"></script>
+    <link href="http://GrocersPoint.com/static/v1591/uiv2/../../images/favicon.ico" rel="icon"
+        type="image/ico">
+</head>
+<body>
+    <!--top stripe-->
+    <div class="uiv2-top-strip">
+        <div class="uiv2-top-strip-wrapper">
+            <div class="uiv2-loggedin-top-strip-left" style="padding: 11px 0 4px 2px;">
+                <div class="uiv2-selected-location" style="padding-right: 15px;">
+                    Delivery at:</div>
+                <div style="float: left; height: 24px;" id="address_drop_down">
+                    <div id="uiv2-location-id" class="uiv2-location" tabindex="1" style="margin: 0px;">
+                        <div class="uiv2-loc-wrapper">
+                            <span id="uiv2-selection">Wanwadi, Pune </span>
+                            <img class="city-menu-dropdown-img" src="../../images/top_header_dropdown.png">
+                        </div>
+                        <div class="uiv2-location-dropdown">
+                            <div style="width: 141px;" class="uiv2-whiteshade">
+                            </div>
+                            <!--<div class="uiv2-urlocation">Your current location</div>-->
+                            <div class="uiv2-urlocation">
+                                <b>Earliest Available Delivery Slot:</b></div>
+                            <!--<span class="uiv2-currentlocation">Pune</span>-->
+                            <div class="uiv2-urlocation-adrs">
+                                <!--<p class="express_slot_container">Next express delivery slot -</p>-->
+                                <p style="display: none;" class="express_slot_container">
+                                    <img class="exp-slot" src="../../../../images/bike_red.png" style="vertical-align: middle;
+                                        margin-right: 4px;" title="" height="12">
+                                    <span id="express_slot"></span>
+                                </p>
+                                <!--<p>Next available delivery slot -</p>-->
+                                <p>
+                                    <img class="normal-slot" src="../../images/van_icon_green.png" style="vertical-align: middle;
+                                        margin-right: 5px;" title="Standard Delivery: Tomorrow, 7:00 AM to 9:30 AM" height="13">
+                                    <span id="normal_slot">Standard Delivery: Tomorrow, 7:00 AM to 9:30 AM</span>
+                                </p>
+                            </div>
+                            <div class="border-dot" style="text-align: center;">
+                                <a class="uiv2-checkout-button-small" id="change_area_visitor" href="javascript:void(0)">
+                                    <p>
+                                        CHANGE LOCATION
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uiv2-tele" style="float: left; margin-left: 151px;">
+                        <span class="uiv2-tele-icon"></span><span class="uiv2-tele-txt">9003253023</span></div>
+                </div>
+            </div>
+            <div class="uiv2-top-strip-right">
+                <div class="uiv2-free-delivery" style="display: None">
+                    Free delivery for orders <span class="WebRupee">Rs.</span> 1 and above
+                </div>
+                <!-- End new to GrocersPoint -->
+                <div class="uiv2-login">
+                    <span class="uiv2-login-h-">
+                        <div class="uiv2-login-dropdown-block">
+                            <div class="uiv2-login-head">
+                                Login</div>
+                            <div class="uiv2-login-dropdown">
+                                <div class="uiv2-whiteshade">
+                                </div>
+                            </div>
+                        </div>
+                        <a style="font-weight: 600; cursor: pointer" href="http://grocerspoint.com/login/">LOGIN</a></span><p
+                            class="uiv2-separator">
+                            |</p>
+                    <span><a href="http://grocerspoint.com/signup/" style="font-weight: 600">SIGN UP</a></span></div>
+            </div>
+            <!-- End guest login -->
+        </div>
+        <div class="uiv2-background-shade">
+        </div>
+    </div>
+    <!-- end of top stripe-->
+    <!--header section-->
+    <div class="uiv2-header-section">
+        <a href="http://bigbasket.com/">
+            <img alt="India's Largest Online Grocery Store - BigBasket" src="../../images/bb_logo.jpg"
+                style="float: left; margin: 10px 33px 10px 10px" height="66" width="161" /></a><div
+                    id="auto_search">
+                    <div class="uiv2-search">
+                        <form method="get" onsubmit="return submit_search_form()" action="#" name="frmMainSearch">
+                        <input value="Search for more than 14,000 products..." name="q" id="id_q" autocomplete="off"
+                            type="text" />
+                        <input value="Search" type="submit" />
+                        </form>
+                    </div>
+                </div>
+        <div class="uiv2-your-basket uiv2-checkout-basket">
+            <div class="uiv2-checkout-widget">
+                <div style="display: block;" class="uiv2-basket-items">
+                    <span class="uiv2-basket-icon"></span>Your Basket<span class="uiv2-num-basket-items">0
+                        items</span></div>
+                <a href="javascript:void(0);" class="uiv2-start-shopping-link uiv2-checkout">START SHOPPING
+                    &nbsp; <span class="uiv2-save-icon"></span></a>
+            </div>
+            <div class="uiv2-your-basket-dropdown">
+                <div class="uiv2-whiteshade">
+                </div>
+                <div class="uiv2-your-basket-items-block">
+                    <h4>
+                        Your Basket (<span class="uiv2-num-basket-items">0 items</span>)</h4>
+                    <div class="uiv2-basket-items-saved">
+                        <span class="uiv2-basket-save-icon"></span>
+                        <div class="uiv2-right">
+                            <p>
+                                You saved!</p>
+                            <span class="uiv2-basket-saving"></span>
+                        </div>
+                    </div>
+                </div>
+                <div style="height: 80px;" class="scrollbar1">
+                    <div style="height: 0px;" class="scrollbar">
+                        <div style="height: 0px;" class="track">
+                            <div class="thumb">
+                                <div class="end">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="height: 80px;" class="viewport">
+                        <div style="top: 0px;" class="overview">
+                            <ul class="cart-items-holder">
+                                <li class="uiv2-cart-placeholder-msg">
+                                    <p>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <p class="uiv2-items-sub-total" id="sub_total">
+                </p>
+                <p class="uiv2-items-total-delivery_charge" id="delivery_charge">
+                </p>
+                <p class="uiv2-items-total-cost">
+                </p>
+                <div class="uiv2-total-cost-wrap">
+                    <div class="uiv2-get-free-delivery">
+                    </div>
+                    <a class="uiv2-checkout-button-small fltr view_basket_checkout" href="javascript:void(0);">
+                        <p>
+                            View Basket &amp; Checkout</p>
+                        <span></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end of header section-->
+    <!--menu item-->
+    <div class="uiv2-navigation-slider">
+        <style>
+            .uiv2-express-help
+            {
+                background-attachment: scroll;
+                background-clip: border-box;
+                background-color: transparent;
+                background-image: url("//bigbasket.com/static/uiv2/../../images/new_delivering.png");
+                background-origin: padding-box;
+                background-position: left top;
+                background-repeat: no-repeat;
+                background-size: auto auto;
+                float: right;
+                height: 12px;
+                margin-bottom: 0;
+                margin-left: -6px;
+                margin-right: 6px;
+                margin-top: 5px;
+                width: 15px;
+                border: 1px solid red;
+                display: inline-block;
+            }
+            .uiv2-express-help:hover
+            {
+                background: url(../../images/myshoppinglist_help_hover.png) no-repeat left top;
+            }
+        </style>
+        <div class="uiv2-left-navigation">
+            <div class="uiv2-nav uiv2-menu-bar" id="home-menu">
+                SHOP <span class="uiv2-nav-icon"></span>
+            </div>
+            <nav class="bigbasketmenu uiv2-main-menu" id="basket_menu" style="display: block !important;">
+         <ul class="dropdown-menu" role="menu"> 
+           
+                            <li class="normal" data-submenu-id="menu-01">
+                                    <a href="~/ProductCategory/Staples?cat_name=staples" class="top-category">Grocery &amp;  Staples </a>
+                                      <div id="menu-01" class="uiv2-dropdown-box popover ">
+
+                                            <div class="uiv2-dropdown-inner"><div class="uiv2-dp-heading"><a href="http://bigbasket.com/cl/grocery-staples/?nc=nb" rel="nofollow">Grocery &amp;  Staples</a></div><div class="uiv2-dropdown-column"><ul><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/grocery-staples/dals-pulses/?nc=nb">
+            
+
+            Dals &amp; Pulses 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/grocery-staples/dals-pulses/?nc=nb">Dals &amp; Pulses</a></li><li><a href="http://bigbasket.com/pc/grocery-staples/dals-pulses/channa-dal/?nc=nb"> - Channa Dal </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/dals-pulses/moong-dal/?nc=nb"> - Moong Dal </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/dals-pulses/other-dals/?nc=nb"> - Other Dals </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/dals-pulses/soya-products/?nc=nb"> - Soya Products </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/dals-pulses/toor-dal/?nc=nb"> - Toor Dal </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/dals-pulses/urad-dal/?nc=nb"> - Urad Dal </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/grocery-staples/dry-fruits/?nc=nb">
+            
+
+            Dry Fruits 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/grocery-staples/dry-fruits/?nc=nb">Dry Fruits</a></li><li><a href="http://bigbasket.com/pc/grocery-staples/dry-fruits/almonds/?nc=nb"> - Almonds </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/dry-fruits/cashews/?nc=nb"> - Cashews </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/dry-fruits/other-dry-fruits/?nc=nb"> - Other Dry Fruits </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/dry-fruits/raisins/?nc=nb"> - Raisins </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/?nc=nb">
+            
+
+            Edible Oils &amp; Ghee 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/?nc=nb">Edible Oils &amp; Ghee</a></li><li><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/coconut-oil/?nc=nb"> - Coconut Oil </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/ghee/?nc=nb"> - Ghee </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/gingelly-oil/?nc=nb"> - Gingelly Oil </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/groundnut-oils/?nc=nb"> - Groundnut Oils </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/mustard-oils/?nc=nb"> - Mustard Oils </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/olive-oils/?nc=nb"> - Olive Oils </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/other-oils/?nc=nb"> - Other Oils </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/sunflower-oils/?nc=nb"> - Sunflower Oils </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/edible-oils-ghee/vanaspati/?nc=nb"> - Vanaspati </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/grocery-staples/flours-sooji/?nc=nb">
+            
+
+            Flours &amp; Sooji 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/grocery-staples/flours-sooji/?nc=nb">Flours &amp; Sooji</a></li><li><a href="http://bigbasket.com/pc/grocery-staples/flours-sooji/besan/?nc=nb"> - Besan </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/flours-sooji/maida/?nc=nb"> - Maida </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/flours-sooji/other-flours/?nc=nb"> - Other Flours </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/flours-sooji/rice-flour/?nc=nb"> - Rice Flour </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/flours-sooji/sooji-rava/?nc=nb"> - Sooji &amp; Rava </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/flours-sooji/wheat-atta/?nc=nb"> - Wheat Atta </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/grocery-staples/masalas-spices/?nc=nb">
+            
+
+            Masalas &amp; Spices 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/grocery-staples/masalas-spices/?nc=nb">Masalas &amp; Spices</a></li><li><a href="http://bigbasket.com/pc/grocery-staples/masalas-spices/cooking-paste/?nc=nb"> - Cooking Paste </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/masalas-spices/international-spices/?nc=nb"> - International Spices </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/masalas-spices/powdered-spices/?nc=nb"> - Powdered Spices </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/masalas-spices/ready-masalas/?nc=nb"> - Ready Masalas </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/masalas-spices/whole-spices/?nc=nb"> - Whole Spices </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/grocery-staples/organic-staples/?nc=nb">
+            
+
+            Organic Staples 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/grocery-staples/organic-staples/?nc=nb">Organic Staples</a></li><li><a href="http://bigbasket.com/pc/grocery-staples/organic-staples/organic-dals-pulses/?nc=nb"> - Organic Dals &amp; Pulses </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/organic-staples/organic-dry-fruits/?nc=nb"> - Organic Dry Fruits </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/organic-staples/organic-edible-oils-ghee/?nc=nb"> - Organic Edible Oils &amp; Ghee </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/organic-staples/organic-flours/?nc=nb"> - Organic Flours </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/organic-staples/organic-masalas-spices/?nc=nb"> - Organic Masalas &amp; Spices </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/organic-staples/organic-rice-rice-products/?nc=nb"> - Organic Rice &amp; Rice Products </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/organic-staples/organic-saltsugar-jaggery/?nc=nb"> - Organic Salt,Sugar &amp; Jaggery </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/grocery-staples/rice-rice-products/?nc=nb">
+            
+
+            Rice &amp; Rice Products 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-top-95-minus"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/grocery-staples/rice-rice-products/?nc=nb">Rice &amp; Rice Products</a></li><li><a href="http://bigbasket.com/pc/grocery-staples/rice-rice-products/avalakki-poha/?nc=nb"> - Avalakki / Poha </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/rice-rice-products/basmati-rice/?nc=nb"> - Basmati Rice </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/rice-rice-products/boiled-rice/?nc=nb"> - Boiled Rice </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/rice-rice-products/other-rice-products/?nc=nb"> - Other Rice Products </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/rice-rice-products/raw-rice/?nc=nb"> - Raw Rice </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/rice-rice-products/whole-grains/?nc=nb"> - Whole Grains </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/grocery-staples/salt-sugar-jaggery/?nc=nb">
+            
+
+            Salt, Sugar &amp; Jaggery 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/grocery-staples/salt-sugar-jaggery/?nc=nb">Salt, Sugar &amp; Jaggery</a></li><li><a href="http://bigbasket.com/pc/grocery-staples/salt-sugar-jaggery/salt/?nc=nb"> - Salt </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/salt-sugar-jaggery/sugar/?nc=nb"> - Sugar </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/salt-sugar-jaggery/sugar-cubes/?nc=nb"> - Sugar Cubes </a></li><li><a href="http://bigbasket.com/pc/grocery-staples/salt-sugar-jaggery/sugar-free/?nc=nb"> - Sugar Free </a></li></ul></div></li></ul></div><div class="uiv2-dropdown-column"><span>Popular Brands</span><ul><li><a href="http://bigbasket.com/pb/bb-royal/?nc=nb">BB Royal</a></li><li><a href="http://bigbasket.com/pb/aashirvaad/?nc=nb">Aashirvaad</a></li><li><a href="http://bigbasket.com/pb/bb-popular/?nc=nb">Bb Popular</a></li><li><a href="http://bigbasket.com/pb/fortune/?nc=nb">Fortune </a></li><li><a href="http://bigbasket.com/pb/gemini/?nc=nb">Gemini</a></li><li><a href="http://bigbasket.com/pb/everest/?nc=nb">Everest</a></li></ul></div></div>
+                    <a class="uiv2-left-nav-category-img" href="http://bigbasket.com/ps/?q=terra+greens&amp;nc=cat-nav-img&amp;b_t=cl-nav.grocery-br-staples&amp;b_camp=terra-greens&amp;t_from_ban=11379&amp;t_pos=1" style="width: 560px;
+                                height: 400px;
+                                background: url('//bigbasket.com/media/uploads/banner_images/terra_greens_Banner_19thoct.png') no-repeat right bottom;
+                                 right: 10px"></a>
+                     </div>
+                            </li>
+
+            <li class="normal" data-submenu-id="menu-02"><a href="~/ProductCategory/DairyBreadEggs?cat_name=Dairy-Bread-Eggs" class="top-category">Bread  Dairy &amp; Eggs </a>
+                               <div id="menu-02" class="uiv2-dropdown-box popover "><div class="uiv2-dropdown-inner"><div class="uiv2-dp-heading"><a href="http://bigbasket.com/cl/bread-dairy-eggs/?nc=nb" rel="nofollow">Bread  Dairy &amp; Eggs</a></div><div class="uiv2-dropdown-column"><ul><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/bread-dairy-eggs/bread-bakery/?nc=nb">
+            
+
+            Bread &amp; Bakery 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/bread-dairy-eggs/bread-bakery/?nc=nb">Bread &amp; Bakery</a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/bread-bakery/bread/?nc=nb"> - Bread </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/bread-bakery/buns-pavs/?nc=nb"> - Buns &amp; Pavs </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/bread-bakery/cakes/?nc=nb"> - Cakes </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/bread-bakery/muffins-cookies-rusk/?nc=nb"> - Muffins, Cookies &amp; Rusk </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/?nc=nb">
+            
+
+            Dairy Products 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png" /></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/?nc=nb">Dairy Products</a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/butter-cream/?nc=nb"> - Butter &amp; Cream </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/cheese/?nc=nb"> - Cheese </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/condensed-milk/?nc=nb"> - Condensed Milk </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/curd/?nc=nb"> - Curd </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/milk/?nc=nb"> - Milk </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/milk-drinks/?nc=nb"> - Milk Drinks </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/paneer-tofu/?nc=nb"> - Paneer &amp; Tofu </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/soya-drinks/?nc=nb"> - Soya Drinks </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/whiteners/?nc=nb"> - Whiteners </a></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/dairy-products/yogurt-lassi/?nc=nb"> - Yogurt &amp; Lassi </a></li></ul></div></li><li><a href="http://bigbasket.com/pc/bread-dairy-eggs/eggs/?nc=nb"> Eggs </a></li></ul></div><div class="uiv2-dropdown-column"><span>Popular Brands</span><ul><li><a href="http://bigbasket.com/pb/amul/?nc=nb">Amul</a></li><li><a href="http://bigbasket.com/pb/amul-taaza/?nc=nb">Amul Taaza</a></li><li><a href="http://bigbasket.com/pb/mother-dairy/?nc=nb">mother dairy</a></li><li><a href="http://bigbasket.com/pb/dough-magic/?nc=nb">Dough Magic</a></li><li><a href="http://bigbasket.com/pb/golden-eggs/?nc=nb">Golden Eggs</a></li><li><a href="http://bigbasket.com/pb/gowardhan/?nc=nb">Gowardhan</a></li></ul></div></div><a class="uiv2-left-nav-category-img" href="http://bigbasket.com/cl/bread-dairy-eggs/?nc=cat-nav-img&amp;b_t=cl-nav.bread-br-dairy-eggs&amp;t_from_ban=2752&amp;t_pos=1" style="width: 560px;
+                                height: 400px;
+                                background: url('//bigbasket.com/media/uploads/banner_images/dough_magic_breads.png') no-repeat right bottom;
+                                 "></a></div>
+                                 
+                             </li>
+                             
+                             
+       <li class="normal" data-submenu-id="menu-03">
+                            <a href="~/ProductCategory/Beverage?cat_name=bevrages" class="top-category">Beverages </a>
+                               <div id="menu-03" class="uiv2-dropdown-box popover ">
+                                        <div class="uiv2-dropdown-inner"><div class="uiv2-dp-heading"><a href="http://bigbasket.com/cl/beverages/?nc=nb" rel="nofollow">Beverages</a></div><div class="uiv2-dropdown-column"><ul><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/beverages/energy-health-drinks/?nc=nb">
+            
+
+            Energy &amp; Health Drinks 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/beverages/energy-health-drinks/?nc=nb">Energy &amp; Health Drinks</a></li><li><a href="http://bigbasket.com/pc/beverages/energy-health-drinks/energy-drinks/?nc=nb"> - Energy Drinks </a></li><li><a href="http://bigbasket.com/pc/beverages/energy-health-drinks/health-drinks/?nc=nb"> - Health Drinks </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/beverages/fruit-drinks-juices/?nc=nb">
+            
+
+            Fruit Drinks &amp; Juices 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/beverages/fruit-drinks-juices/?nc=nb">Fruit Drinks &amp; Juices</a></li><li><a href="http://bigbasket.com/pc/beverages/fruit-drinks-juices/concentrates/?nc=nb"> - Concentrates </a></li><li><a href="http://bigbasket.com/pc/beverages/fruit-drinks-juices/mango-juices/?nc=nb"> - Mango Juices </a></li><li><a href="http://bigbasket.com/pc/beverages/fruit-drinks-juices/orange-apple-juices/?nc=nb"> - Orange &amp; Apple Juices </a></li><li><a href="http://bigbasket.com/pc/beverages/fruit-drinks-juices/other-juices/?nc=nb"> - Other Juices </a></li><li><a href="http://bigbasket.com/pc/beverages/fruit-drinks-juices/syrups-squashes/?nc=nb"> - Syrups &amp; Squashes </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/beverages/mineral-water/?nc=nb">
+            
+
+            Mineral Water 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/beverages/mineral-water/?nc=nb">Mineral Water</a></li><li><a href="http://bigbasket.com/pc/beverages/mineral-water/packaged-drinking-water/?nc=nb"> - Packaged Drinking Water </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/beverages/organic-beverages/?nc=nb">
+            
+
+            Organic Beverages 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/beverages/organic-beverages/?nc=nb">Organic Beverages</a></li><li><a href="http://bigbasket.com/pc/beverages/organic-beverages/organic-juices/?nc=nb"> - Organic Juices </a></li><li><a href="http://bigbasket.com/pc/beverages/organic-beverages/organic-tea/?nc=nb"> - Organic Tea </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/beverages/soft-drinks/?nc=nb">
+            
+
+            Soft Drinks 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/beverages/soft-drinks/?nc=nb">Soft Drinks</a></li><li><a href="http://bigbasket.com/pc/beverages/soft-drinks/cola-drinks/?nc=nb"> - Cola Drinks </a></li><li><a href="http://bigbasket.com/pc/beverages/soft-drinks/other-soft-drinks/?nc=nb"> - Other Soft Drinks </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg "></span><a href="http://bigbasket.com/pc/beverages/tea-coffee/?nc=nb">
+            
+
+            Tea &amp; Coffee 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/beverages/tea-coffee/?nc=nb">Tea &amp; Coffee</a></li><li><a href="http://bigbasket.com/pc/beverages/tea-coffee/green-tea/?nc=nb"> - Green Tea </a></li><li><a href="http://bigbasket.com/pc/beverages/tea-coffee/ground-coffee/?nc=nb"> - Ground Coffee </a></li><li><a href="http://bigbasket.com/pc/beverages/tea-coffee/instant-coffee/?nc=nb"> - Instant Coffee </a></li><li><a href="http://bigbasket.com/pc/beverages/tea-coffee/tea/?nc=nb"> - Tea </a></li><li><a href="http://bigbasket.com/pc/beverages/tea-coffee/tea-bags/?nc=nb"> - Tea Bags </a></li></ul></div></li></ul></div><div class="uiv2-dropdown-column"><span>Popular Brands</span><ul><li><a href="http://bigbasket.com/pb/red-label/?nc=nb">Red Label</a></li><li><a href="http://bigbasket.com/pb/cadbury/?nc=nb">Cadbury</a></li><li><a href="http://bigbasket.com/pb/real/?nc=nb">Real</a></li><li><a href="http://bigbasket.com/pb/tropicana/?nc=nb">Tropicana</a></li><li><a href="http://bigbasket.com/pb/society/?nc=nb">Society</a></li><li><a href="http://bigbasket.com/pb/nescafe/?nc=nb">Nescafe </a></li></ul></div></div><a class="uiv2-left-nav-category-img" href="http://bigbasket.com/promo/november-special-offer/free-biscuits-with-bru-gold-instant-coffee/45422/?nc=cat-nav-img&amp;b_t=cl-nav.beverages&amp;b_camp=hultot&amp;t_from_ban=11957&amp;t_pos=1" style="width: 560px;
+                                height: 400px;
+                                background: url('//bigbasket.com/media/uploads/banner_images/Navigation_Bar-Bev.png') no-repeat right bottom;
+                                 "></a></div>
+                             </li>
+     <li class="normal" data-submenu-id="menu-04"><a href="~/ProductCategory/BrandedFoods?cat_name=Branded-Foods" class="top-category">Branded  Foods </a>
+                                   <div id="menu-04" class="uiv2-dropdown-box popover uiv2-width-660 "><div class="uiv2-dropdown-inner"><div class="uiv2-dp-heading"><a href="http://bigbasket.com/cl/branded-foods/?nc=nb" rel="nofollow">Branded  Foods</a></div>
+                             <div class="uiv2-dropdown-column"><ul><li><a href="http://bigbasket.com/pc/branded-foods/ayurvedic-food/?nc=nb"> Ayurvedic Food </a></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/branded-foods/baby-food/?nc=nb">
+            
+
+            Baby Food 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/baby-food/?nc=nb">Baby Food</a></li><li><a href="http://bigbasket.com/pc/branded-foods/baby-food/baby-cereal/?nc=nb"> - Baby Cereal </a></li><li><a href="http://bigbasket.com/pc/branded-foods/baby-food/infant-formula/?nc=nb"> - Infant Formula </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/branded-foods/baking-dessert-items/?nc=nb">
+            
+
+            Baking &amp; Dessert Items 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/baking-dessert-items/?nc=nb">Baking &amp; Dessert Items</a></li><li><a href="http://bigbasket.com/pc/branded-foods/baking-dessert-items/baking-ingredients/?nc=nb"> - Baking Ingredients </a></li><li><a href="http://bigbasket.com/pc/branded-foods/baking-dessert-items/ready-baking-mixes/?nc=nb"> - Ready Baking Mixes </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/branded-foods/biscuits/?nc=nb">
+            
+
+            Biscuits 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/biscuits/?nc=nb">Biscuits</a></li><li><a href="http://bigbasket.com/pc/branded-foods/biscuits/cookies/?nc=nb"> - Cookies </a></li><li><a href="http://bigbasket.com/pc/branded-foods/biscuits/cream-biscuits/?nc=nb"> - Cream Biscuits </a></li><li><a href="http://bigbasket.com/pc/branded-foods/biscuits/glucose-marie-milk-biscuits/?nc=nb"> - Glucose, Marie &amp; Milk Biscuits </a></li><li><a href="http://bigbasket.com/pc/branded-foods/biscuits/healthy-digestive-biscuits/?nc=nb"> - Healthy &amp; Digestive Biscuits </a></li><li><a href="http://bigbasket.com/pc/branded-foods/biscuits/salty-biscuits/?nc=nb"> - Salty Biscuits </a></li><li><a href="http://bigbasket.com/pc/branded-foods/biscuits/wafers/?nc=nb"> - Wafers </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/branded-foods/breakfast-cereals/?nc=nb">
+            
+
+            Breakfast Cereals 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/breakfast-cereals/?nc=nb">Breakfast Cereals</a></li><li><a href="http://bigbasket.com/pc/branded-foods/breakfast-cereals/flakes/?nc=nb"> - Flakes </a></li><li><a href="http://bigbasket.com/pc/branded-foods/breakfast-cereals/muesli/?nc=nb"> - Muesli </a></li><li><a href="http://bigbasket.com/pc/branded-foods/breakfast-cereals/oats/?nc=nb"> - Oats </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/branded-foods/canned-food/?nc=nb">
+            
+
+            Canned Food 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/canned-food/?nc=nb">Canned Food</a></li><li><a href="http://bigbasket.com/pc/branded-foods/canned-food/veg-fruit/?nc=nb"> - Veg &amp; Fruit </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/branded-foods/chocolates-sweets/?nc=nb">
+            
+
+            Chocolates &amp; Sweets 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/chocolates-sweets/?nc=nb">Chocolates &amp; Sweets</a></li><li><a href="http://bigbasket.com/pc/branded-foods/chocolates-sweets/chocolate/?nc=nb"> - Chocolate </a></li><li><a href="http://bigbasket.com/pc/branded-foods/chocolates-sweets/toffee-candy/?nc=nb"> - Toffee &amp; Candy </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/branded-foods/indian-sweets/?nc=nb">
+            
+
+            Indian Sweets 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/indian-sweets/?nc=nb">Indian Sweets</a></li><li><a href="http://bigbasket.com/pc/branded-foods/indian-sweets/other-sweets/?nc=nb"> - Other Sweets </a></li><li><a href="http://bigbasket.com/pc/branded-foods/indian-sweets/rasagulla-gulab-jamun/?nc=nb"> - Rasagulla &amp; Gulab Jamun </a></li></ul></div></li></ul></div><div class="uiv2-dropdown-column"><ul><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/branded-foods/jams-spreads/?nc=nb">
+            
+
+            Jams &amp; Spreads 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/jams-spreads/?nc=nb">Jams &amp; Spreads</a></li><li><a href="http://bigbasket.com/pc/branded-foods/jams-spreads/honey/?nc=nb"> - Honey </a></li><li><a href="http://bigbasket.com/pc/branded-foods/jams-spreads/marmalade/?nc=nb"> - Marmalade </a></li><li><a href="http://bigbasket.com/pc/branded-foods/jams-spreads/mayonnaise/?nc=nb"> - Mayonnaise </a></li><li><a href="http://bigbasket.com/pc/branded-foods/jams-spreads/mixed-fruit-jam/?nc=nb"> - Mixed Fruit Jam </a></li><li><a href="http://bigbasket.com/pc/branded-foods/jams-spreads/other-jams/?nc=nb"> - Other Jams </a></li><li><a href="http://bigbasket.com/pc/branded-foods/jams-spreads/other-spreads/?nc=nb"> - Other Spreads </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/branded-foods/noodles/?nc=nb">
+            
+
+            Noodles 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/noodles/?nc=nb">Noodles</a></li><li><a href="http://bigbasket.com/pc/branded-foods/noodles/chinese-noodles/?nc=nb"> - Chinese Noodles </a></li><li><a href="http://bigbasket.com/pc/branded-foods/noodles/instant-noodles/?nc=nb"> - Instant Noodles </a></li></ul></div></li><li><a href="http://bigbasket.com/pc/branded-foods/organic-branded-foods/?nc=nb"> Organic Branded Foods </a></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/branded-foods/pasta-vermicelli/?nc=nb">
+            
+
+            Pasta &amp; Vermicelli 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/pasta-vermicelli/?nc=nb">Pasta &amp; Vermicelli</a></li><li><a href="http://bigbasket.com/pc/branded-foods/pasta-vermicelli/instant-pastas/?nc=nb"> - Instant Pastas </a></li><li><a href="http://bigbasket.com/pc/branded-foods/pasta-vermicelli/regular-pasta/?nc=nb"> - Regular Pasta </a></li><li><a href="http://bigbasket.com/pc/branded-foods/pasta-vermicelli/vermicelli/?nc=nb"> - Vermicelli </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/branded-foods/pickles/?nc=nb">
+            
+
+            Pickles 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/pickles/?nc=nb">Pickles</a></li><li><a href="http://bigbasket.com/pc/branded-foods/pickles/lime-pickle/?nc=nb"> - Lime Pickle </a></li><li><a href="http://bigbasket.com/pc/branded-foods/pickles/mango-pickle/?nc=nb"> - Mango Pickle </a></li><li><a href="http://bigbasket.com/pc/branded-foods/pickles/other-pickle/?nc=nb"> - Other Pickle </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/branded-foods/ready-to-eat-cook/?nc=nb">
+            
+
+            Ready To Eat &amp; Cook 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/ready-to-eat-cook/?nc=nb">Ready To Eat &amp; Cook</a></li><li><a href="http://bigbasket.com/pc/branded-foods/ready-to-eat-cook/cooking-pastes-powders/?nc=nb"> - Cooking Pastes &amp; Powders </a></li><li><a href="http://bigbasket.com/pc/branded-foods/ready-to-eat-cook/frozen-veg-food/?nc=nb"> - Frozen Veg Food </a></li><li><a href="http://bigbasket.com/pc/branded-foods/ready-to-eat-cook/fryums-papad/?nc=nb"> - Fryums &amp; Papad </a></li><li><a href="http://bigbasket.com/pc/branded-foods/ready-to-eat-cook/heat-eat-ready-meals/?nc=nb"> - Heat &amp; Eat Ready Meals </a></li><li><a href="http://bigbasket.com/pc/branded-foods/ready-to-eat-cook/ready-mix/?nc=nb"> - Ready Mix </a></li><li><a href="http://bigbasket.com/pc/branded-foods/ready-to-eat-cook/soup/?nc=nb"> - Soup </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/branded-foods/sauces-ketchup/?nc=nb">
+            
+
+            Sauces &amp; Ketchup 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-top-95-minus uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/sauces-ketchup/?nc=nb">Sauces &amp; Ketchup</a></li><li><a href="http://bigbasket.com/pc/branded-foods/sauces-ketchup/chilli-soya-sauces/?nc=nb"> - Chilli &amp; Soya Sauces </a></li><li><a href="http://bigbasket.com/pc/branded-foods/sauces-ketchup/cooking-sauce/?nc=nb"> - Cooking Sauce </a></li><li><a href="http://bigbasket.com/pc/branded-foods/sauces-ketchup/other-sauces/?nc=nb"> - Other Sauces </a></li><li><a href="http://bigbasket.com/pc/branded-foods/sauces-ketchup/tomato-ketchup/?nc=nb"> - Tomato Ketchup </a></li><li><a href="http://bigbasket.com/pc/branded-foods/sauces-ketchup/tomato-sauce/?nc=nb"> - Tomato Sauce </a></li><li><a href="http://bigbasket.com/pc/branded-foods/sauces-ketchup/vinegar/?nc=nb"> - Vinegar </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/branded-foods/veg-snacks/?nc=nb">
+            
+
+            Veg Snacks 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-top-95-minus uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/branded-foods/veg-snacks/?nc=nb">Veg Snacks</a></li><li><a href="http://bigbasket.com/pc/branded-foods/veg-snacks/chips/?nc=nb"> - Chips </a></li><li><a href="http://bigbasket.com/pc/branded-foods/veg-snacks/corn-snacks/?nc=nb"> - Corn Snacks </a></li><li><a href="http://bigbasket.com/pc/branded-foods/veg-snacks/energy-bars/?nc=nb"> - Energy Bars </a></li><li><a href="http://bigbasket.com/pc/branded-foods/veg-snacks/healthy-snacks/?nc=nb"> - Healthy Snacks </a></li><li><a href="http://bigbasket.com/pc/branded-foods/veg-snacks/namkeen/?nc=nb"> - Namkeen </a></li><li><a href="http://bigbasket.com/pc/branded-foods/veg-snacks/popcorn/?nc=nb"> - Popcorn </a></li><li><a href="http://bigbasket.com/pc/branded-foods/veg-snacks/snacky-nuts/?nc=nb"> - Snacky Nuts </a></li></ul></div></li></ul></div><div class="uiv2-dropdown-column"><span>Popular Brands</span><ul><li><a href="http://bigbasket.com/pb/britannia/?nc=nb">Britannia</a></li><li><a href="http://bigbasket.com/pb/kelloggs/?nc=nb">Kelloggs</a></li><li><a href="http://bigbasket.com/pb/parle/?nc=nb">Parle</a></li><li><a href="http://bigbasket.com/pb/haldirams/?nc=nb">Haldirams </a></li><li><a href="http://bigbasket.com/pb/cadbury/?nc=nb">Cadbury</a></li><li><a href="http://bigbasket.com/pb/sunfeast/?nc=nb">Sunfeast</a></li></ul></div></div><a class="uiv2-left-nav-category-img" href="http://bigbasket.com/promo/november-special-offer/free-sandwich-bread-with-kissan-mixed-fruit-jam/43822/?nc=cat-nav-img&amp;b_t=cl-nav.branded-br-foods&amp;b_camp=hultot&amp;t_from_ban=11949&amp;t_pos=1" style="width: 560px;
+                                height: 400px;
+                                background: url('//bigbasket.com/media/uploads/banner_images/images/Nav_Bar_foods.png') no-repeat right bottom;
+                                 "></a></div>
+                             </li>
+                             
+             <li class="normal" data-submenu-id="menu-05"><a href="~/ProductCategory/PersonalCare?cat_name=Personal-Care" class="top-category">Personal  Care </a>
+                                <div id="menu-05" class="uiv2-dropdown-box popover uiv2-width-660 "><div class="uiv2-dropdown-inner">
+                                    <div class="uiv2-dp-heading"><a href="http://bigbasket.com/cl/personal-care/?nc=nb" rel="nofollow">Personal  Care</a>
+                                 </div><div class="uiv2-dropdown-column"><ul><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/personal-care/ayurvedic-non-food/?nc=nb">
+            
+
+            Ayurvedic 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/ayurvedic-non-food/?nc=nb">Ayurvedic</a></li><li><a href="http://bigbasket.com/pc/personal-care/ayurvedic-non-food/ayurvedic-hair-skin-care/?nc=nb"> - Ayurvedic Hair &amp; Skin Care </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/personal-care/baby-care/?nc=nb">
+            
+
+            Baby Care 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column">
+                <ul><li class="uiv2-category-name">
+                <a href="http://bigbasket.com/pc/personal-care/baby-care/?nc=nb">Baby Care</a></li><li><a href="http://bigbasket.com/pc/personal-care/baby-care/baby-care-accessories/?nc=nb"> - Baby Care Accessories </a></li><li><a href="http://bigbasket.com/pc/personal-care/baby-care/baby-creams-lotion/?nc=nb"> - Baby Creams &amp; Lotion </a></li><li><a href="http://bigbasket.com/pc/personal-care/baby-care/baby-oil-shampoos/?nc=nb"> - Baby Oil &amp; Shampoos </a></li><li><a href="http://bigbasket.com/pc/personal-care/baby-care/baby-powder/?nc=nb"> - Baby Powder </a></li><li><a href="http://bigbasket.com/pc/personal-care/baby-care/baby-soap/?nc=nb"> - Baby Soap </a></li><li><a href="http://bigbasket.com/pc/personal-care/baby-care/diapers-wipes/?nc=nb"> - Diapers &amp; Wipes </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/personal-care/cosmetics/?nc=nb">
+            
+
+            Cosmetics 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/cosmetics/?nc=nb">Cosmetics</a></li><li><a href="http://bigbasket.com/pc/personal-care/cosmetics/eye-care-kajal/?nc=nb"> - Eye Care &amp; Kajal </a></li><li><a href="http://bigbasket.com/pc/personal-care/cosmetics/hair-removal/?nc=nb"> - Hair Removal </a></li><li><a href="http://bigbasket.com/pc/personal-care/cosmetics/nail-care-accessories/?nc=nb"> - Nail Care Accessories </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/personal-care/deos-perfumes/?nc=nb">
+            
+
+            Deos &amp; Perfumes 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/deos-perfumes/?nc=nb">Deos &amp; Perfumes</a></li><li><a href="http://bigbasket.com/pc/personal-care/deos-perfumes/mens-deo/?nc=nb"> - Mens Deo </a></li><li><a href="http://bigbasket.com/pc/personal-care/deos-perfumes/womens-deo/?nc=nb"> - Womens Deo </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/personal-care/fashion-accessories/?nc=nb">
+            
+
+            Fashion Accessories 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/fashion-accessories/?nc=nb">Fashion Accessories</a></li><li><a href="http://bigbasket.com/pc/personal-care/fashion-accessories/tote-handbags/?nc=nb"> - Tote &amp; Handbags </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/personal-care/grooming-tools-accessories/?nc=nb">
+            
+
+            Grooming Tools &amp; Accessories 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/grooming-tools-accessories/?nc=nb">Grooming Tools &amp; Accessories</a></li><li><a href="http://bigbasket.com/pc/personal-care/grooming-tools-accessories/electric-shavers-trimmers/?nc=nb"> - Electric Shavers &amp; Trimmers </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/personal-care/hair-care/?nc=nb">
+            
+
+            Hair Care 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-top-95-minus"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/hair-care/?nc=nb">Hair Care</a></li><li><a href="http://bigbasket.com/pc/personal-care/hair-care/hair-colors-dyes/?nc=nb"> - Hair Colors &amp; Dyes </a></li><li><a href="http://bigbasket.com/pc/personal-care/hair-care/hair-conditioner/?nc=nb"> - Hair Conditioner </a></li><li><a href="http://bigbasket.com/pc/personal-care/hair-care/hair-oil/?nc=nb"> - Hair Oil </a></li><li><a href="http://bigbasket.com/pc/personal-care/hair-care/shampoo/?nc=nb"> - Shampoo </a></li><li><a href="http://bigbasket.com/pc/personal-care/hair-care/styling-products/?nc=nb"> - Styling Products </a></li></ul></div></li></ul></div><div class="uiv2-dropdown-column"><ul><li><a href="http://bigbasket.com/pc/personal-care/home-linen/?nc=nb"> Home Linen </a></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/personal-care/oral-care/?nc=nb">
+            
+
+            Oral Care 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/oral-care/?nc=nb">Oral Care</a></li><li><a href="http://bigbasket.com/pc/personal-care/oral-care/mouthwash/?nc=nb"> - Mouthwash </a></li><li><a href="http://bigbasket.com/pc/personal-care/oral-care/tooth-powder/?nc=nb"> - Tooth Powder </a></li><li><a href="http://bigbasket.com/pc/personal-care/oral-care/toothbrush/?nc=nb"> - Toothbrush </a></li><li><a href="http://bigbasket.com/pc/personal-care/oral-care/toothpaste/?nc=nb"> - Toothpaste </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/personal-care/otc/?nc=nb">
+            
+
+            OTC 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/otc/?nc=nb">OTC</a></li><li><a href="http://bigbasket.com/pc/personal-care/otc/antiseptics/?nc=nb"> - Antiseptics </a></li><li><a href="http://bigbasket.com/pc/personal-care/otc/contraceptives/?nc=nb"> - Contraceptives </a></li><li><a href="http://bigbasket.com/pc/personal-care/otc/cotton-bandages/?nc=nb"> - Cotton &amp; Bandages </a></li><li><a href="http://bigbasket.com/pc/personal-care/otc/health-supplements/?nc=nb"> - Health Supplements </a></li><li><a href="http://bigbasket.com/pc/personal-care/otc/pain-relievers/?nc=nb"> - Pain Relievers </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/personal-care/personal-hygiene/?nc=nb">
+            
+
+            Personal Hygiene 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/personal-hygiene/?nc=nb">Personal Hygiene</a></li><li><a href="http://bigbasket.com/pc/personal-care/personal-hygiene/body-wash/?nc=nb"> - Body Wash </a></li><li><a href="http://bigbasket.com/pc/personal-care/personal-hygiene/face-wash/?nc=nb"> - Face Wash </a></li><li><a href="http://bigbasket.com/pc/personal-care/personal-hygiene/hand-sanitizer/?nc=nb"> - Hand Sanitizer </a></li><li><a href="http://bigbasket.com/pc/personal-care/personal-hygiene/hand-wash/?nc=nb"> - Hand Wash </a></li><li><a href="http://bigbasket.com/pc/personal-care/personal-hygiene/liquid-soaps-bars/?nc=nb"> - Liquid Soaps &amp; Bars </a></li></ul></div></li><li><a href="http://bigbasket.com/pc/personal-care/raincoat/?nc=nb"> Raincoat </a></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/personal-care/sanitary-needs/?nc=nb">
+            
+
+            Sanitary Needs 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/sanitary-needs/?nc=nb">Sanitary Needs</a></li><li><a href="http://bigbasket.com/pc/personal-care/sanitary-needs/adult-diapers/?nc=nb"> - Adult Diapers </a></li><li><a href="http://bigbasket.com/pc/personal-care/sanitary-needs/sanitary-aids/?nc=nb"> - Sanitary Aids </a></li><li><a href="http://bigbasket.com/pc/personal-care/sanitary-needs/sanitary-pads/?nc=nb"> - Sanitary Pads </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/personal-care/shaving-needs/?nc=nb">
+            
+
+            Shaving Needs 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/shaving-needs/?nc=nb">Shaving Needs</a></li><li><a href="http://bigbasket.com/pc/personal-care/shaving-needs/after-shave/?nc=nb"> - After Shave </a></li><li><a href="http://bigbasket.com/pc/personal-care/shaving-needs/shaving-blade-razors/?nc=nb"> - Shaving Blade &amp; Razors </a></li><li><a href="http://bigbasket.com/pc/personal-care/shaving-needs/shaving-brush/?nc=nb"> - Shaving Brush </a></li><li><a href="http://bigbasket.com/pc/personal-care/shaving-needs/shaving-cream-foam-gels/?nc=nb"> - Shaving Cream, Foam &amp; Gels </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/personal-care/skin-care/?nc=nb">
+            
+
+            Skin Care 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-top-95-minus uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/personal-care/skin-care/?nc=nb">Skin Care</a></li><li><a href="http://bigbasket.com/pc/personal-care/skin-care/body-lotion/?nc=nb"> - Body Lotion </a></li><li><a href="http://bigbasket.com/pc/personal-care/skin-care/body-oil/?nc=nb"> - Body Oil </a></li><li><a href="http://bigbasket.com/pc/personal-care/skin-care/body-scrub/?nc=nb"> - Body Scrub </a></li><li><a href="http://bigbasket.com/pc/personal-care/skin-care/face-cream/?nc=nb"> - Face Cream </a></li><li><a href="http://bigbasket.com/pc/personal-care/skin-care/face-packs-scrubs/?nc=nb"> - Face Packs &amp; Scrubs </a></li><li><a href="http://bigbasket.com/pc/personal-care/skin-care/facial-tissues/?nc=nb"> - Facial Tissues </a></li><li><a href="http://bigbasket.com/pc/personal-care/skin-care/foot-care/?nc=nb"> - Foot Care </a></li><li><a href="http://bigbasket.com/pc/personal-care/skin-care/lip-care/?nc=nb"> - Lip Care </a></li><li><a href="http://bigbasket.com/pc/personal-care/skin-care/talc/?nc=nb"> - Talc </a></li></ul></div></li></ul></div><div class="uiv2-dropdown-column"><span>Popular Brands</span><ul><li><a href="http://bigbasket.com/pb/colgate/?nc=nb">Colgate</a></li><li><a href="http://bigbasket.com/pb/dettol/?nc=nb">Dettol</a></li><li><a href="http://bigbasket.com/pb/dove/?nc=nb">Dove</a></li><li><a href="http://bigbasket.com/pb/whisper/?nc=nb">Whisper </a></li><li><a href="http://bigbasket.com/pb/himalaya/?nc=nb">Himalaya</a></li><li><a href="http://bigbasket.com/pb/nivea/?nc=nb">Nivea</a></li></ul></div></div><a class="uiv2-left-nav-category-img" href="http://bigbasket.com/pd/250771/?nc=cat-nav-img&amp;b_t=cl-nav.personal-br-care&amp;b_camp=hultot&amp;t_from_ban=12775&amp;t_pos=1" style="width: 560px;
+                                height: 400px;
+                                background: url('//bigbasket.com/media/uploads/banner_images/Navigation_Bar-PC-_Pears.png') no-repeat right bottom;
+                                 "></a></div>
+                                 
+                             </li>
+    <li class="normal" data-submenu-id="menu-06"><a href="~/ProductCategory/HouseHold?cat_name=Household" class="top-category">Household </a>
+                              <div id="menu-06" class="uiv2-dropdown-box popover uiv2-width-660 "><div class="uiv2-dropdown-inner"><div class="uiv2-dp-heading"><a href="http://bigbasket.com/cl/household/?nc=nb" rel="nofollow">Household</a></div><div class="uiv2-dropdown-column"><ul><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/household/back-to-school/?nc=nb">
+            
+
+            Back To School 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/back-to-school/?nc=nb">Back To School</a></li><li><a href="http://bigbasket.com/pc/household/back-to-school/lunch-boxes-bts/?nc=nb"> - Lunch Boxes </a></li><li><a href="http://bigbasket.com/pc/household/back-to-school/notebook-bts/?nc=nb"> - Notebook - Bts </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/household/books-periodicals/?nc=nb">
+            
+
+            Books &amp; Periodicals 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/books-periodicals/?nc=nb">Books &amp; Periodicals</a></li><li><a href="http://bigbasket.com/pc/household/books-periodicals/cookery-books/?nc=nb"> - Cookery Books </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/household/car-care/?nc=nb">
+            
+
+            Car Care 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/car-care/?nc=nb">Car Care</a></li><li><a href="http://bigbasket.com/pc/household/car-care/car-care-accessories/?nc=nb"> - Car Care Accessories </a></li><li><a href="http://bigbasket.com/pc/household/car-care/car-freshener/?nc=nb"> - Car Freshener </a></li><li><a href="http://bigbasket.com/pc/household/car-care/car-shampoo-wax/?nc=nb"> - Car Shampoo &amp; Wax </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/household/cleaning-accessories/?nc=nb">
+            
+
+            Cleaning Accessories 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/cleaning-accessories/?nc=nb">Cleaning Accessories</a></li><li><a href="http://bigbasket.com/pc/household/cleaning-accessories/brooms-dust-pans/?nc=nb"> - Brooms &amp; Dust Pans </a></li><li><a href="http://bigbasket.com/pc/household/cleaning-accessories/brushes-scrubbers/?nc=nb"> - Brushes &amp; Scrubbers </a></li><li><a href="http://bigbasket.com/pc/household/cleaning-accessories/cleaning-dust-cloth/?nc=nb"> - Cleaning &amp; Dust Cloth </a></li><li><a href="http://bigbasket.com/pc/household/cleaning-accessories/mops/?nc=nb"> - Mops </a></li><li><a href="http://bigbasket.com/pc/household/cleaning-accessories/toilet-brushes/?nc=nb"> - Toilet Brushes </a></li><li><a href="http://bigbasket.com/pc/household/cleaning-accessories/wiper/?nc=nb"> - Wiper </a></li></ul></div></li><li><a href="http://bigbasket.com/pc/household/consumer-durables/?nc=nb"> Consumer Durables </a></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/household/cookware/?nc=nb">
+            
+
+            Cookware 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/cookware/?nc=nb">Cookware</a></li><li><a href="http://bigbasket.com/pc/household/cookware/frying-sauce-panskadai/?nc=nb"> - Frying &amp; Sauce Pans/Kadai </a></li><li><a href="http://bigbasket.com/pc/household/cookware/handi-tawa/?nc=nb"> - Handi &amp; Tawa </a></li><li><a href="http://bigbasket.com/pc/household/cookware/kettles/?nc=nb"> - Kettles </a></li><li><a href="http://bigbasket.com/pc/household/cookware/steel-vessels/?nc=nb"> - Steel Vessels </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/household/detergents/?nc=nb">
+            
+
+            Detergents 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/detergents/?nc=nb">Detergents</a></li><li><a href="http://bigbasket.com/pc/household/detergents/liquid-detergent/?nc=nb"> - Liquid Detergent </a></li><li><a href="http://bigbasket.com/pc/household/detergents/pre-post-wash-care/?nc=nb"> - Pre &amp; Post Wash Care </a></li><li><a href="http://bigbasket.com/pc/household/detergents/washing-bars/?nc=nb"> - Washing Bars </a></li><li><a href="http://bigbasket.com/pc/household/detergents/washing-powders/?nc=nb"> - Washing Powders </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/household/electricals/?nc=nb">
+            
+
+            Electricals 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/electricals/?nc=nb">Electricals</a></li><li><a href="http://bigbasket.com/pc/household/electricals/battery/?nc=nb"> - Battery </a></li><li><a href="http://bigbasket.com/pc/household/electricals/bulbs/?nc=nb"> - Bulbs </a></li><li><a href="http://bigbasket.com/pc/household/electricals/cfls/?nc=nb"> - CFL's </a></li><li><a href="http://bigbasket.com/pc/household/electricals/electrical-accessories/?nc=nb"> - Electrical Accessories </a></li></ul></div></li><li><a href="http://bigbasket.com/pc/household/festive-decoratives/?nc=nb"> Festive Decoratives </a></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-440"></span><a href="http://bigbasket.com/pc/household/gardening-needs/?nc=nb">
+            
+
+            Gardening Needs 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/gardening-needs/?nc=nb">Gardening Needs</a></li><li><a href="http://bigbasket.com/pc/household/gardening-needs/fertilizers-pesticides/?nc=nb"> - Fertilizers &amp; Pesticides </a></li><li><a href="http://bigbasket.com/pc/household/gardening-needs/garden-tools/?nc=nb"> - Garden Tools </a></li><li><a href="http://bigbasket.com/pc/household/gardening-needs/planters-trays/?nc=nb"> - Planters &amp; Trays </a></li></ul></div></li></ul></div><div class="uiv2-dropdown-column"><ul><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/household/kitchen-dining/?nc=nb">
+            
+
+            Kitchen &amp; Dining 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/kitchen-dining/?nc=nb">Kitchen &amp; Dining</a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/bakeware/?nc=nb"> - Bakeware </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/beer-mugs-whisky-wine-glasses/?nc=nb"> - Beer Mugs, Whisky &amp; Wine Glasses </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/bottle-tin-openers/?nc=nb"> - Bottle &amp; Tin Openers </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/containers/?nc=nb"> - Containers </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/cutlery/?nc=nb"> - Cutlery </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/cutters-peelers-scrapers/?nc=nb"> - Cutters, Peelers &amp; Scrapers </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/cutting-chopping-boards/?nc=nb"> - Cutting &amp; Chopping Boards </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/dinnerware/?nc=nb"> - Dinnerware </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/knives/?nc=nb"> - Knives </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/ladles-spatulas/?nc=nb"> - Ladles &amp; Spatulas </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/lunch-tiffin-snacks-boxes/?nc=nb"> - Lunch, Tiffin &amp; Snacks Boxes </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/other-kitchen-needs/?nc=nb"> - Other Kitchen Needs </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/pressure-cookers/?nc=nb"> - Pressure Cookers </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/scissors/?nc=nb"> - Scissors </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/spoons-forks/?nc=nb"> - Spoons &amp; Forks </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/tableware/?nc=nb"> - Tableware </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/tea-coffe-cups-mugs-tumblers/?nc=nb"> - Tea &amp; Coffe Cups, Mugs &amp; Tumblers </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-dining/water-bottles/?nc=nb"> - Water Bottles  </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/household/kitchen-appliances/?nc=nb">
+            
+
+            Kitchen Appliances 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/kitchen-appliances/?nc=nb">Kitchen Appliances</a></li><li><a href="http://bigbasket.com/pc/household/kitchen-appliances/mixer-grinder/?nc=nb"> - Mixer &amp; Grinder </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-appliances/other-kitchen-appliances/?nc=nb"> - Other Kitchen Appliances </a></li><li><a href="http://bigbasket.com/pc/household/kitchen-appliances/toaster/?nc=nb"> - Toaster </a></li></ul></div></li><li><a href="http://bigbasket.com/pc/household/kitchen-tools/?nc=nb"> Kitchen Tools </a></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/household/kitchenware/?nc=nb">
+            
+
+            Kitchenware 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/kitchenware/?nc=nb">Kitchenware</a></li><li><a href="http://bigbasket.com/pc/household/kitchenware/tumblers-cups/?nc=nb"> - Tumblers &amp; Cups </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/household/paper-disposable/?nc=nb">
+            
+
+            Paper &amp; Disposable 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/paper-disposable/?nc=nb">Paper &amp; Disposable</a></li><li><a href="http://bigbasket.com/pc/household/paper-disposable/aluminium-foil-cling-wrap/?nc=nb"> - Aluminium Foil &amp; Cling Wrap </a></li><li><a href="http://bigbasket.com/pc/household/paper-disposable/disposable-plates-utensils/?nc=nb"> - Disposable Plates &amp; Utensils </a></li><li><a href="http://bigbasket.com/pc/household/paper-disposable/garbage-bags/?nc=nb"> - Garbage Bags </a></li><li><a href="http://bigbasket.com/pc/household/paper-disposable/kitchen-rolls/?nc=nb"> - Kitchen Rolls </a></li><li><a href="http://bigbasket.com/pc/household/paper-disposable/tissue-paper-napkins/?nc=nb"> - Tissue Paper &amp; Napkins </a></li><li><a href="http://bigbasket.com/pc/household/paper-disposable/toilet-paper/?nc=nb"> - Toilet Paper </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/household/pet-care/?nc=nb">
+            
+
+            Pet Care 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/pet-care/?nc=nb">Pet Care</a></li><li><a href="http://bigbasket.com/pc/household/pet-care/pet-care-accessories/?nc=nb"> - Pet Care Accessories </a></li><li><a href="http://bigbasket.com/pc/household/pet-care/pet-food/?nc=nb"> - Pet Food </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/household/plasticware/?nc=nb">
+            
+
+            Plasticware 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/plasticware/?nc=nb">Plasticware</a></li><li><a href="http://bigbasket.com/pc/household/plasticware/other-plasticware/?nc=nb"> - Other Plasticware </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/household/pooja-needs/?nc=nb">
+            
+
+            Pooja Needs 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/pooja-needs/?nc=nb">Pooja Needs</a></li><li><a href="http://bigbasket.com/pc/household/pooja-needs/agarbatti/?nc=nb"> - Agarbatti </a></li><li><a href="http://bigbasket.com/pc/household/pooja-needs/candles-diyas/?nc=nb"> - Candles &amp; Diyas </a></li><li><a href="http://bigbasket.com/pc/household/pooja-needs/other-pooja-needs/?nc=nb"> - Other Pooja Needs </a></li></ul></div></li><li class="uiv2-submenu"><span class="uiv2-white-bg uiv2-right-240"></span><a href="http://bigbasket.com/pc/household/repellents-fresheners/?nc=nb">
+            
+
+            Repellents &amp; Fresheners 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column uiv2-mar-l-190"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/household/repellents-fresheners/?nc=nb">Repellents &amp; Fresheners</a></li><li><a href="http://bigbasket.com/pc/household/repellents-fresheners/home-air-freshener/?nc=nb"> - Home &amp; Air Freshener </a></li><li><a href="http://bigbasket.com/pc/household/repellents-fresheners/mosquito-repellent/?nc=nb"> - Mosquito Repellent </a></li><li><a href="http://bigbasket.com/pc/household/repellents-fresheners/other-insect-repellent/?nc=nb"> - Other Insect Repellent </a></li><li><a href="http://bigbasket.com/pc/household/repellents-fresheners/rodent-control/?nc=nb"> - Rodent Control </a></li></ul></div></li><li><a href="http://bigbasket.com/cl/household/?nc=show-more">Show More &gt;</a></li></ul></div><div class="uiv2-dropdown-column"><span>Popular Brands</span><ul><li><a href="http://bigbasket.com/pb/surf-excel/?nc=nb">Surf Excel</a></li><li><a href="http://bigbasket.com/pb/vim/?nc=nb">Vim</a></li><li><a href="http://bigbasket.com/pb/rin/?nc=nb">Rin</a></li><li><a href="http://bigbasket.com/pb/harpic/?nc=nb">Harpic</a></li><li><a href="http://bigbasket.com/pb/lizol/?nc=nb">Lizol</a></li><li><a href="http://bigbasket.com/pb/tide/?nc=nb">Tide</a></li></ul></div></div><a class="uiv2-left-nav-category-img" href="http://bigbasket.com/promo/november-special-offer/free-scotch-brite-scurb-with-vim-dishwash-gel/43835/?nc=cat-nav-img&amp;b_t=cl-nav.household&amp;b_camp=hultot&amp;t_from_ban=11963&amp;t_pos=1" style="width: 560px;
+                                height: 400px;
+                                background: url('//bigbasket.com/media/uploads/banner_images/Navigation_Bar-HHC-8thnov.png') no-repeat right bottom;"></a></div>
+                             </li>
+                 <li class="normal" data-submenu-id="menu-09"><a href="~/ProductCategory/Gifts?cat_name=gifts" class="top-category">Gifts</a>
+                                <div id="menu-09" class="uiv2-dropdown-box popover ">
+                                    <div class="uiv2-dropdown-inner">
+                                        <div class="uiv2-dp-heading"><a href="http://bigbasket.com/cl/meat/?nc=nb" rel="nofollow">Meat</a></div>
+                                        <div class="uiv2-dropdown-column">
+                                            <ul><li class="uiv2-submenu">
+                                                <span class="uiv2-white-bg "></span>
+                                                <a href="http://bigbasket.com/pc/meat/chicken/?nc=nb">
+            
+
+                                   Chicken 
+             
+                <img alt="arrow" src="../../images/ArrowOrange.png"></a><div class="uiv2-sub-dropdown-column"><ul><li class="uiv2-category-name"><a href="http://bigbasket.com/pc/meat/chicken/?nc=nb">Chicken</a></li><li><a href="http://bigbasket.com/pc/meat/chicken/fresh-chicken/?nc=nb"> - Fresh Chicken </a></li><li><a href="http://bigbasket.com/pc/meat/chicken/frozen-chicken/?nc=nb"> - Frozen Chicken </a></li></ul></div></li><li><a href="http://bigbasket.com/pc/meat/mutton/?nc=nb"> Mutton </a></li><li><a href="http://bigbasket.com/pc/meat/pork-other-meats/?nc=nb"> Pork &amp; Other Meats </a></li><li><a href="http://bigbasket.com/pc/meat/seafood/?nc=nb"> Seafood </a></li></ul></div><div class="uiv2-dropdown-column"><span>Popular Brands</span><ul><li><a href="http://bigbasket.com/pb/capella/?nc=nb">Capella</a></li><li><a href="http://bigbasket.com/pb/real-good/?nc=nb">Real Good</a></li><li><a href="http://bigbasket.com/pb/buffet/?nc=nb">Buffet </a></li><li><a href="http://bigbasket.com/pb/fresho-meats/?nc=nb">Fresho Meats</a></li><li><a href="http://bigbasket.com/pb/elicious/?nc=nb">Elicious</a></li></ul></div></div><a class="uiv2-left-nav-category-img" href="http://bigbasket.com/cl/meat/?nc=cat-nav-img&amp;b_t=cl-nav.meat&amp;t_from_ban=2700&amp;t_pos=1" style="width: 560px;
+                                height: 400px;
+                                background: url('//bigbasket.com/media/uploads/banner_images/left_nav_mum_12jan_2015_meats.png') no-repeat right bottom;
+                                 "></a></div>
+                             </li>
+                           
+
+                            </ul><a href="http://bigbasket.com/product/all-categories/" class="uiv2-view-complete-link">VIEW COMPLETE SHOP</a></nav>
+        </div>
+        <!--end of menu-->
+        <!-- start header menu-->
+        <div class="uiv2-slider-wrapper">
+            <div class="uiv2-header-navigation-links">
+                <ul class="uiv2-offers-navigation">
+                    <li class="uiv2-offers-link-div">
+                        <div class="uiv2-offers-link">
+                            <div class="uiv2-offers-dropdown">
+                                <div class="uiv2-whiteshade">
+                                </div>
+                                <ul>
+                                    <li><a href="http://bigbasket.com/all-offers/?nc=nb">DISCOUNTS</a></li><li><a href="http://bigbasket.com/promo/promotions/?nc=nb">
+                                        PROMOTIONS</a></li><li><a href="http://bigbasket.com/products/bundle-packs/?nc=nb">BUNDLE
+                                            PACKS</a></li></ul>
+                            </div>
+                            <span class="uiv2-offers-icon"></span>OFFERS
+                        </div>
+                    </li>
+                    <li>
+                        <div class="uiv2-new-arrivals-link">
+                            <div class="uiv2-new-arrivals-dropdown">
+                                <div class="uiv2-whiteshade">
+                                </div>
+                                <ul>
+                                    <li><a href="http://bigbasket.com/products/now-at-bigbasket/?nc=nb">Now Available at
+                                        BigBasket</a></li><li><a href="http://bigbasket.com/products/new-launches/?nc=nb">New
+                                            Launches</a></li></ul>
+                            </div>
+                            <span class="uiv2-newarrivals-icon"></span>NEW ARRIVALS
+                        </div>
+                    </li>
+                    <li id="non_discount_shop" style="">
+                        <div class="uiv2-shop-link">
+                            <div class="uiv2-shop-dropdown">
+                                <div style="width: 246px;" class="uiv2-whiteshade">
+                                </div>
+                                <ul>
+                                    <li style="" id="festive-gift-hampers"><a href="http://bigbasket.com/sp/festive-gift-hampers/?nc=hb">
+                                        Festive Gift Hampers</a></li><li style="" id="bb-specials"><a href="http://bigbasket.com/sp/bb-specials/?nc=hb">
+                                            BB Specials</a></li><li style="" id="party-time"><a href="http://bigbasket.com/sp/party-time/?nc=hb">
+                                                Party Time</a></li><li style="" id="big-savings"><a href="http://bigbasket.com/sp/big-savings/?nc=hb">
+                                                    Big Savings</a></li></ul>
+                            </div>
+                            <span class="uiv2-shop-icon"></span><span class="heading">Festive Gift Hampers</span><span
+                                class="uiv2-nav-more-link">+ more</span></div>
+                    </li>
+                </ul>
+                <div class="uiv2-shop-by-list-div">
+                    <ul>
+                        <li>
+                            <div id="shop-by-list-link" class="uiv2-shop-by-list-link">
+                                <span class="uiv2-shop-icon"></span><span>SHOP BY LIST</span><div class="uiv2-shop-by-list-dropdown margin-shoplist"
+                                    id="shoplist-menu" style="display: none;">
+                                    <div class="uiv2-whiteshade wid127">
+                                    </div>
+                                    <h4 id="create_scratch_list" style="border-bottom: 1px solid #888;">
+                                        <a href="javascript:show_scratchlist('unsaved',true,'',true,false);">CREATE NEW SCRATCH
+                                            LIST</a></h4>
+                                    <div id="shoplist_dropdown">
+                                    </div>
+                                    <span><a href="http://bigbasket.com/shopping-lists/?nc=nb" class="all">VIEW ALL</a></span></div>
+                            </div>
+                        </li>
+                        <!--
+                 
+                -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--end of header menus-->
+        <div class="uiv2-slider-carousel ">
+            @RenderBody()
+            <div class="uiv2-content-wrapper">
+            </div>
+        </div>
+        <!-- Handle bar templates -->
+        <script id="tmplt-autosearch" type="text/x-handlebars-template">
+       {{#if data}}
+        <ul id="uiv2-autosearch-list">
+       {{/if}}
+       {{#each data}}
+            {{#each this.store_details_to_use}}
+                {{#if ../this.name}}
+                    <li>
+                        {{#if ../../this.simg}}
+                            {{#if ../../../alt_suggestions}}
+                                <a href="{{../../this.url}}?nc=sugg-as" class="uiv2-img-product-search"><img src="{{../../this.simg}}" alt="" height="30" width="30"></a>
+                            {{else}}
+                                <a href="{{../../this.url}}?nc=as" class="uiv2-img-product-search"><img src="{{../../this.simg}}" alt="" height="30" width="30"></a>
+                            {{/if}}
+                        {{else}}
+                            <div class="uiv2-push-left" style="width:30px; height:30px;"></div>
+                        {{/if}}
+                        {{#if ../../alt_suggestions}}
+                            <a href="{{../../../this.url}}?nc=sugg-as" class="uiv2-img-product-name"><p>{{../../../this.brand}}</p><span>{{../../../this.name}}</span></a>
+                        {{else}}
+                            <a href="{{../../../this.url}}?nc=as" class="uiv2-img-product-name"><p>{{../../../this.brand}}</p><span>{{../../../this.name}}</span></a>
+
+                        {{/if}}
+                        <div class="uiv2-product-weight"><span>{{../../this.weight}}</span></div><div class="uiv2-product-cost"><span><span class="WebRupee">Rs.</span> {{../../this.price}}</span></div><!----START for standard and express icon------------------>
+                            {{#ifCond this.fi_type "darkstore-express"}}
+                                <div class="autoSearch_express"><a href="" class="exp-slot autoSearch_express" title="{{this.next_slot}}"></a><input type="hidden" name='cart-item-mode'
+                                           id="cartitem_mode_{{../../this.pid}}"
+                                           value="express" /></div>
+                            {{else}}
+                                {{#ifCond this.fi_type "jit"}}
+                                    <div class="autoSearch_standard"><a href="" class="normal-slot autoSearch_standard" title="{{this.next_slot}}"></a><input type="hidden" name='cart-item-mode'
+                                               id="cartitem_mode_{{../../this.pid}}"
+                                               value="normal" /></div>
+                                {{else}}
+                                    <div class="autoSearch_standard"><a href="" class="normal-slot autoSearch_standard" title="{{this.next_slot}}"></a><input type="hidden" name='cart-item-mode'
+                                               id="cartitem_mode_{{../../this.pid}}"
+                                               value="normal" /></div>
+                                {{/ifCond}}
+                            {{/ifCond}}
+                        <!----END for standard and express icon------------------><div class="uiv2-rate-count-btn uiv2-search-qty-widget"><span class="uiv2-qty-label">Qty</span><input value="1" type="text" id="uiv2-qty-{{../../this.pid}}" name="" maxlength="{{../../max_qty_length}}"></div><div class="uiv2-product-add-btn">
+
+                            {{#ifCond ../../this.availability  2}}
+                                <img src="/static/../../images/searchOutOfStock.png" alt="Out of stock"
+                                     style="width:60px; margin-top: 10px;" />
+                            {{else}}
+                                <input class="uiv2-a2c-autosearch" value="ADD" type="button"
+                                       id="uiv2-a2c-{{../../../this.pid}}">
+                            {{/ifCond}}
+
+                        </div><input type="hidden" id="uiv2-pdesc-{{../../this.pid}}" value="{{../../this.text}}" /></li>
+                {{/if}}
+            {{/each}}
+       {{else}}
+            {{#unless alt_suggestions}}
+                <p class="uiv2-commonly-searched" style="margin-left: 8px;">Commonly Searched</p>
+                {{#each top_searches}}
+                <ul id="uiv2-autosearch-list" class="uiv2-top-searches">
+                {{#each this}}
+                    <li><a href="/ps/?q={{this}}">{{{ this}}}</a></li>
+                {{/each}}
+                </ul>
+                {{/each}}
+            {{/unless}}
+       {{/each}}
+       {{#if data}}
+        </ul>
+            {{#if alt_pb_pc_res}}
+                    <div class="uiv2-no-result-found" style="margin-top: 10px;"><p class="uiv2-no-result" id="uiv2-no-result" class="uiv2-interested-p"
+                           style="margin-left: 4px;">Perhaps you may be interested in:</p></div>
+
+            {{/if}}
+       {{/if}}
+        <div style="margin-left: -1px;">
+        {{#each alt_pb_pc_res}}
+            <ul id="uiv2-autosearch-list-alt" class="uiv2-top-searches" style="width:160px;margin:0;"><li><a href="{{this}}">{{@@key}}</a></li></ul>
+        {{/each}}
+        </div></script>
+        <script id="tmplt-cart-items" type="text/x-handlebars-template">
+        {{#each items}}
+            <li><div class="uiv2-items-img"><a href="#"><img src="{{this.simg}}"  alt="{{this.description}}" width="65" height="61" ></a></div><div class="uiv2-items-content-wrapper"><div class="uiv2-items-content"><span><a href="#"> {{this.brand}} </a></span><p><a href="#">{{this.description}}</a></p></div><div class="uiv2-items-button-block"><div class="uiv2-grid-count-btn"><button class="icon icon-decrease-qty-search-popup">-</button><input type="text" class="text-change-qty-search-popup" id="p_{{this.pid}}" value="{{this.quantity}}" maxlength="{{max_qty_length}}" /><button class="icon icon-increase-qty-search-popup">+</button></div><span class="uiv2-items-rate"><span class="WebRupee">Rs.</span> {{this.mrp}}</span>
+                        {{#if this.saving_int}}
+                        <div class="uiv2-items-saved-rate"><span>SAVED</span><span><span class="WebRupee">Rs.</span> {{this.saving}}</span></div>
+                        {{/if}}
+                    </div></div><a href="javascript:void(0);" id="p_remove_{{this.pid}}" class="uiv2-remove-product"></a></li>
+        {{else}}
+
+            <li class="uiv2-cart-placeholder-msg"><p></p></li>
+
+        {{/each}}
+        </script>
+        <!-- End Handle bar templates -->
+        <script src="../../js/jquery-ui.js" type="text/javascript"></script>
+        <script src="../../js/uiv2_main.js" type="text/javascript"></script>
+        <script src="../../js/jquery_006.js" type="text/javascript"></script>
+</body>
+</html>

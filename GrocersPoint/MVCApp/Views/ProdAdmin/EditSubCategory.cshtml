@@ -1,0 +1,51 @@
+﻿@model BLL.SubCategoryDetails
+
+@{
+    ViewBag.Title = "EditSubCategory";
+    Layout = "~/Views/Shared/_ProdAdminLayout.cshtml.cshtml";
+}
+
+<h2>EditSubCategory</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SubCategoryDetails</legend>
+
+@*        <div class="editor-label">
+            @Html.LabelFor(model => model.Sub_Cat_Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sub_Cat_Id)
+            @Html.ValidationMessageFor(model => model.Sub_Cat_Id)
+        </div>*@
+        @Html.HiddenFor(model => model.Sub_Cat_Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sub_Cat_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Sub_Cat_Name)
+            @Html.ValidationMessageFor(model => model.Sub_Cat_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cat_Name)
+        </div>
+        <div class="editor-field">
+           
+            @Html.DropDownList("Cat_Name", (IEnumerable<SelectListItem>)ViewBag.SubCategory, "Select Category")
+            @Html.ValidationMessageFor(model => model.Cat_Name)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

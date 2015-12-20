@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BLL.SubCategoryDetails>
+
+@{
+    ViewBag.Title = "SubCategory";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+}
+
+<table width="100%">
+<tr>
+<td style="text-align:center"> <b>Sub Category</b></td>
+
+</tr>
+</table>
+
+<p style="text-align:right">
+    @Html.ActionLink("Create New", "CreateSubCategory")
+</p>
+<table border="1">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sub_Cat_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sub_Cat_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cat_Name)
+        </th>
+        <th> Action </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sub_Cat_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sub_Cat_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cat_Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditSubCategory", new {  id=item.Sub_Cat_Id  }) |
+            @Html.ActionLink("Delete", "DeleteSubCategory", new { id=item.Sub_Cat_Id })
+        </td>
+    </tr>
+}
+
+</table>

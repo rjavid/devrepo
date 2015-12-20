@@ -1,0 +1,32 @@
+﻿@model BLL.Brand
+
+@{
+    ViewBag.Title = "CreateBrand";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+}
+
+<h2>CreateBrand</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Brand</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Brand_Name,"Brand Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Brand_Name)
+            @Html.ValidationMessageFor(model => model.Brand_Name)
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Brand")
+</div>
+

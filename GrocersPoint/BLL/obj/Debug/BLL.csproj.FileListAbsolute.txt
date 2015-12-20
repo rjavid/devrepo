@@ -1,0 +1,7 @@
+H:\GrocersPoint\GrocersPoint\BLL\bin\Debug\BLL.dll
+H:\GrocersPoint\GrocersPoint\BLL\bin\Debug\BLL.pdb
+H:\GrocersPoint\GrocersPoint\BLL\bin\Debug\DAL.dll
+H:\GrocersPoint\GrocersPoint\BLL\bin\Debug\DAL.pdb
+H:\GrocersPoint\GrocersPoint\BLL\obj\Debug\ResolveAssemblyReference.cache
+H:\GrocersPoint\GrocersPoint\BLL\obj\Debug\BLL.dll
+H:\GrocersPoint\GrocersPoint\BLL\obj\Debug\BLL.pdb

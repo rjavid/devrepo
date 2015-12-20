@@ -1,0 +1,50 @@
+﻿@model BLL.User_Details
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<fieldset>
+    <legend>User_Details</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User_ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User_Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User_Designation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_Designation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.User_Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.User_Email)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

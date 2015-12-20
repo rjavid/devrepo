@@ -1,0 +1,21 @@
+﻿@model BLL.User_Details
+@{
+    ViewBag.Title = "Index";
+}
+
+  @using (Html.BeginForm())
+  {  
+    <div class="login">
+   <link href="../../Content/style1.css" rel="stylesheet" type="text/css" />
+
+    <h1>Login</h1>
+
+    <input type="text" id="User_ID" name="User_ID" class="login-input" placeholder="User ID" autofocus />
+   @* <div class="login-input">
+        @Html.TextBoxFor(m => Model.User_ID)
+    </div>*@
+    <input type="password" id="User_Password" name="User_Password" class="login-input" placeholder="Password" />
+    <input type="submit" value="Login" class="login-submit"/>
+    <p class="login-help"><a href="index.html">Forgot password?</a></p>
+    </div>
+  }

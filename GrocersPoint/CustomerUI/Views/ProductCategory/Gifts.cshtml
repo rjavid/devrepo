@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CustomerUI.Models.ProductCategory>
+
+@{
+    ViewBag.Title = "Gifts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Gifts</h2>
+
+<div id="products-container">
+<div class="uiv2-shopping-lis-sku-cards">
+
+@foreach (var item in Model)
+{
+   
+
+    
+                     <ul class="uiv2-our-recommendations-list-box">
+          
+                             <li class="" id='@item.ProductId' name='@item.ProductName'>
+
+                                       
+                <div class="uiv2-list-box-img-block">
+                <a href="http://bigbasket.com/pd/40048683/neo-paste-garlic-200-gm/" title='@item.ProductBrand' '- @item.ProductName' @item.ProductQuanity>
+                   
+              
+               <img src='../../ProductsImage/@item.ProductImage' alt= '@item.ProductName'/>
+                </a>
+                </div><!------------- product description text starts---------------->
+                <div class="uiv2-list-box-img-title">
+                   <span class="uiv2-title-tool-tip"></span>
+                    <span class="uiv2-title-tool-tip">
+                        <a href="http://bigbasket.com/pd/40048683/neo-paste-garlic-200-gm/">
+                            <span class="uiv2-brand-title">@item.ProductBrand</span>
+                            @item.ProductName<br />
+                            @item.ProductQuanity
+
+                       </a>
+                    </span></div>
+                
+                <div class="uiv2-list-box-drop-rate-block">
+                   <div class="ListBox_Rate_count">
+                      <div class="uiv2-rate-count-avial"><span class="WebRupee">Rs.</span> @item.ProductPrice
+                      </div>
+                    </div>
+                   <div class="uiv2-list-rate-block">
+                    <div class="uiv2-add-to-basket">
+                <!------ version1 Start------------>
+                <input type="hidden" id="express_tab_40048683" value="False" />
+                        <div class="uiv2-rate-count-text delivery-slot-label">
+                        <div class="uiv2-rate-count-text delivery-slot-label">
+                        <div class="prod_autoSearch_standard"><a class="prod_autoSearch_standard" title="Standard Delivery: Tomorrow Morning"></a></div>
+                        <label class="delivery-slot-label ">
+                        Standard Delivery: Tomorrow Morning
+                    </label></div></div>
+                    <input type="hidden" id="cartitem_mode_40048683" value="normal" /><div class="clr"></div>
+                    <div class="uiv2-rate-count-btn"><span class="uiv2-qty-label">Qty</span><input value="1" type="text" id="p40048683_qty" maxlength="2"></div><a class="uiv2-add-button a2c" href="javascript:void(0)" id="p_40048683_1">
+                            ADD<span class="icon icon-basket-gray"></span></a></div></div></div>
+              
+                                     
+                                      
+                           
+                            </li>
+                      
+                        
+                            
+                        
+                    </ul>
+         
+}
+    
+</div>
+</div>
+
+
+

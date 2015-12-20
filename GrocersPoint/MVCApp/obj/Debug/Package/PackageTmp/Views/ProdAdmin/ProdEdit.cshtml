@@ -1,0 +1,102 @@
+﻿@model BLL.ProductDetails
+
+@{
+    ViewBag.Title = "ProdEdit";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+}
+
+<h2>ProdEdit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ProductDetails</legend>
+
+      @*  <div class="editor-label">
+            @Html.LabelFor(model => model.Prod_Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prod_Id)
+            @Html.ValidationMessageFor(model => model.Prod_Id)
+        </div>*@
+
+        @Html.HiddenFor(model => model.Prod_Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prod_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prod_Name)
+            @Html.ValidationMessageFor(model => model.Prod_Name)
+        </div>
+
+          <div class="editor-label">
+            @Html.LabelFor(model => model.Prod_Quantity)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prod_Quantity)
+            @Html.ValidationMessageFor(model => model.Prod_Quantity)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Prod_Img)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Prod_Img)
+            @Html.ValidationMessageFor(model => model.Prod_Img)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Sub_Cat_Name)
+        </div>
+        <div class="editor-field">
+           @* @Html.EditorFor(model => model.Sub_Cat_Name)
+            @Html.ValidationMessageFor(model => model.Sub_Cat_Name)*@
+            @Html.DropDownList("Sub_Cat_Name", (IEnumerable<SelectListItem>)ViewBag.SubCategory, "Select Category")
+            @Html.ValidationMessageFor(model => model.Sub_Cat_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Brand_Name)
+        </div>
+        <div class="editor-field">
+          @*  @Html.EditorFor(model => model.Brand_Name)
+            @Html.ValidationMessageFor(model => model.Brand_Name)*@
+            @Html.DropDownList("Brand_Name", (IEnumerable<SelectListItem>)ViewBag.DDLBrand, "Select Brand")
+            @Html.ValidationMessageFor(model => model.Brand_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Offer_Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Offer_Price)
+            @Html.ValidationMessageFor(model => model.Offer_Price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Purchase_Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Purchase_Price)
+            @Html.ValidationMessageFor(model => model.Purchase_Price)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("New Product", "ProductAdminHome")
+</div>

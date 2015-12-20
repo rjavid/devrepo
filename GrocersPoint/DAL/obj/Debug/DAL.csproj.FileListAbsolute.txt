@@ -1,0 +1,6 @@
+H:\GrocersPoint\GrocersPoint\DAL\bin\Debug\DAL.dll.config
+H:\GrocersPoint\GrocersPoint\DAL\bin\Debug\DAL.dll
+H:\GrocersPoint\GrocersPoint\DAL\bin\Debug\DAL.pdb
+H:\GrocersPoint\GrocersPoint\DAL\obj\Debug\ResolveAssemblyReference.cache
+H:\GrocersPoint\GrocersPoint\DAL\obj\Debug\DAL.dll
+H:\GrocersPoint\GrocersPoint\DAL\obj\Debug\DAL.pdb

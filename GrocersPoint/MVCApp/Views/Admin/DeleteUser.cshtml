@@ -1,0 +1,32 @@
+﻿@model BLL.User_Details
+@{
+    ViewBag.Title = "Index"; Layout = "../Shared/_Layout.cshtml";
+}
+
+  @using (Html.BeginForm())
+  {  
+      <div id="ddl" style="height:400px;width:100%;">
+      
+     <table width="100%" cellspacing="1" cellpadding="20">
+     <tr>
+     <td style="padding-left:200px;"></td>
+     <td><h2> Delete User</h2></td>
+     </tr>
+        <tr>
+        <td style="width:40%; padding:15px; text-align:right; ">User Id:</td>
+         <td style="width:50%;">
+           @Html.DropDownList("ddluser", ViewBag.DropDown as SelectList,"Select User") </td>
+           
+        </tr>
+           <tr>
+
+
+        <td style="width:30%; padding:15px;"></td>
+         <td style="width:50%;">
+         <input type="submit" style= "width:30%; text-align:center;" id="btnSumbit" value="Delete" />
+         </td>
+        </tr>
+
+     </table>
+      </div>
+  }

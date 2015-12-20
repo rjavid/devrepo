@@ -1,0 +1,66 @@
+﻿@{ Layout = null; } 
+<!DOCTYPE html> 
+<html> 
+<head>
+ <meta name="viewport" content="width=device-width" /> 
+ <title></title> 
+    <link href="../../styles.css" rel="stylesheet" type="text/css" />
+ </head>
+ <body>
+  <div id="container">
+		<div id="header">
+        	<h1>Admin<span class="off">Panel</span></h1>
+            <h2>Hi ,</h2>
+        </div>   
+        
+        <div id="menu">
+        	<ul>
+            	<li class="menuitem"><a href="~/ProdAdmin/Category">Category</a></li>
+                <li class="menuitem show-user" data-open><a href="~/ProdAdmin/SubCategory">SubCategory</a></li>
+                <li class="menuitem"><a href="~/Admin/Brand">Brand</a></li>
+                <li class="menuitem"><a href="~/Admin/Product">Product</a></li>
+                <li class="menuitem"><a href="~//Admin/ChangePassword">Change Password</a></li>
+               
+            </ul>
+        </div>
+        
+        <div id="leftmenu">
+
+        <div id="leftmenu_top"></div>
+
+				<div id="leftmenu_main">    
+                
+                <h3>Menu</h3>
+                        
+                <ul>
+                <li class="menuitem"><a href="~/Admin/Category">Category</a></li>
+                <li class="menuitem show-user" data-open><a href="~/Admin/SubCategory">SubCategory</a></li>
+                <li class="menuitem"><a href="~/Admin/Brand">Brand</a></li>
+                <li class="menuitem"><a href="~/Admin/Product">Product</a></li>
+                <li class="menuitem"><a href="~//Admin/ChangePassword">Change Password</a></li>
+                </ul>
+</div>
+                
+                
+              <div id="leftmenu_bottom"></div>
+        </div>
+        
+        
+        
+        
+		<div id="content">
+        
+        
+        <div id="content_top"></div>
+        <div id="content_main">
+        	@RenderBody()
+        </div>
+        <div id="content_bottom"></div>
+            
+            <div id="footer">Copyright grocerspoint.com</div>
+      </div>
+   </div>
+</body>
+
+  
+</html>

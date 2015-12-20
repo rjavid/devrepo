@@ -1,0 +1,34 @@
+﻿@model BLL.SubCategoryDetails
+
+@{
+    ViewBag.Title = "DeleteSubCategory";
+    Layout = "~/Views/Shared/_ProdAdminLayout.cshtml.cshtml";
+}
+
+<h2>DeleteSubCategory</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>SubCategoryDetails</legend>
+
+ 
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Sub_Cat_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sub_Cat_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cat_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cat_Name)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "SubCategory")
+    </p>
+}

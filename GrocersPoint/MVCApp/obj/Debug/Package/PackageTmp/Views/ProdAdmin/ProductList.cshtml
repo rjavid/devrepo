@@ -1,0 +1,84 @@
+﻿@model IEnumerable<BLL.ProductDetails>
+
+@{
+    ViewBag.Title = "ProductList";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+}
+
+<h2>ProductList</h2>
+<table border="1">
+    <tr>
+        <th style="text-align:center"> 
+            @Html.DisplayNameFor(model => model.Prod_Id)
+        </th>
+        <th style="text-align:center"> 
+            @Html.DisplayNameFor(model => model.Prod_Name)
+        </th>
+
+        <th style="text-align:center"> 
+            @Html.DisplayNameFor(model => model.Prod_Quantity)
+        </th>
+
+        <th style="text-align:center"> 
+            @Html.DisplayNameFor(model => model.Prod_Img)
+        </th>
+        <th style="text-align:center"> 
+            @Html.DisplayNameFor(model => model.Sub_Cat_Name)
+        </th>
+        <th style="text-align:center"> 
+            @Html.DisplayNameFor(model => model.Brand_Name)
+        </th>
+        <th style="text-align:center"> 
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th style="text-align:center"> 
+            @Html.DisplayNameFor(model => model.Offer_Price)
+        </th>
+        <th style="text-align:center"> 
+            @Html.DisplayNameFor(model => model.Purchase_Price)
+        </th>
+        <th style="text-align:center"> Action</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td style="text-align:center"> 
+            @Html.DisplayFor(modelItem => item.Prod_Id)
+        </td>
+        <td style="text-align:center"> 
+            @Html.DisplayFor(modelItem => item.Prod_Name)
+        </td>
+
+        <td style="text-align:center"> 
+            @Html.DisplayFor(modelItem => item.Prod_Quantity)
+        </td>
+
+        <td style="text-align:center"> 
+            @Html.DisplayFor(modelItem => item.Prod_Img)
+        </td>
+        <td style="text-align:center"> 
+            @Html.DisplayFor(modelItem => item.Sub_Cat_Name)
+        </td>
+        <td style="text-align:center"> 
+            @Html.DisplayFor(modelItem => item.Brand_Name)
+        </td>
+        <td style="text-align:center"> 
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td style="text-align:center"> 
+            @Html.DisplayFor(modelItem => item.Offer_Price)
+        </td>
+        <td style="text-align:center"> 
+            @Html.DisplayFor(modelItem => item.Purchase_Price)
+        </td>
+        <td style="text-align:center"> 
+            @Html.ActionLink("Edit", "ProdEdit", new {  id=item.Prod_Id }) ||
+            @Html.ActionLink("Delete", "ProdDelete", new {  id=item.Prod_Id  })
+        </td>
+    </tr>
+}
+
+</table>
+<div>
+    @Html.ActionLink("New Product", "ProductAdminHome")
+</div>

@@ -1,0 +1,32 @@
+﻿@model BLL.Category
+
+@{
+    ViewBag.Title = "Create Category";
+    Layout = "~/Views/Shared/_ProductAdminLayout.cshtml";
+}
+
+<h2>CreateCategory</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Category</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cat_Name,"Category Name")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cat_Name)
+            @Html.ValidationMessageFor(model => model.Cat_Name)
+        </div>
+        <br />
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Category")
+</div>
